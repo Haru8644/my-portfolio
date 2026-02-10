@@ -1,26 +1,64 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Define custom font stack */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-primary: var(--font-inter), var(--font-noto-sans-jp), sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary);
+  /* Prevent horizontal scroll on mobile */
+  overflow-x: hidden;
+}
+
+/* --- Azure Brand Customization --- */
+
+/* Customize text selection color to match Azure Blue */
+::selection {
+  background-color: #0078D4; /* Azure Blue */
+  color: #ffffff;
+}
+
+/* --- Modern Scrollbar --- */
+
+/* For Webkit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 5px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0078D4; /* Azure Blue on hover */
+}
+
+/* --- Utilities --- */
+
+/* Smooth gradient text utility */
+.text-gradient-azure {
+  background: linear-gradient(135deg, #0078D4 0%, #00BCF2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover effect enhancement */
+.card-hover-effect {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(0, 120, 212, 0.15); /* Subtle Blue Shadow */
+  border-color: rgba(0, 120, 212, 0.3);
 }
