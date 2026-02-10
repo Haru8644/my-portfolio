@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ja_JP",
-    url: "https://your-portfolio-url.com", 
+    url: "https://black-mud-02aa94010.6.azurestaticapps.net/", 
     title: "Haruki Ino - Technical Specialist Portfolio",
     description: "Bridging Physics, Business, and Azure Cloud. View my projects and technical stack.",
     siteName: "Haruki Ino.Dev",
