@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Haruki Ino.Dev - Technical Specialist Portfolio
 
-## Getting Started
+![Azure Deploy](https://img.shields.io/badge/Deploy-Azure_Static_Web_Apps-0078D4?logo=microsoftazure)
+![Next.js](https://img.shields.io/badge/Next.js-App_Router-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?logo=typescript)
 
-First, run the development server:
+This is the source code for my personal portfolio website, built to showcase my technical skills, projects, and understanding of modern cloud architectures.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🌍 **Live Site:** [https://black-mud-02aa94010.6.azurestaticapps.net/](https://black-mud-02aa94010.6.azurestaticapps.net/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎯 Architecture & Design Philosophy
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project is more than just a static website; it is engineered to demonstrate my commitment to highly maintainable code and modern frontend architecture.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Separation of Concerns (SoC):** The application strictly decouples Data (`src/data`), UI Components (`src/components`), and Global State (`src/context`). This ensures scalability and makes future feature additions (e.g., a blog section) seamless.
+- **Custom i18n (Bilingual Support):** Implemented a lightweight, Context API-based language switcher (English/Japanese) to cater to both global and domestic audiences without relying on heavy external localization libraries.
+- **Automated CI/CD:** Fully integrated with GitHub Actions to provide zero-downtime, automated deployments directly to **Azure Static Web Apps**.
 
-## Learn More
+## 🛠 Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Frontend Framework:** Next.js (App Router)
+- **Language:** TypeScript (Strict Mode)
+- **Styling & UI:** Tailwind CSS, DaisyUI, Lucide Icons
+- **Animations:** Framer Motion
+- **Hosting & CI/CD:** Azure Static Web Apps, GitHub Actions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 👨‍💻 Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Haruki Ino (Haru)**
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- GitHub: [@Haru8644](https://github.com/Haru8644)
+- AtCoder: [Haru44](https://atcoder.jp/users/Haru44)

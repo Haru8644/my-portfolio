@@ -2,28 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Define custom font stack */
 :root {
   --font-primary: var(--font-inter), var(--font-noto-sans-jp), sans-serif;
 }
 
 body {
   font-family: var(--font-primary);
-  /* Prevent horizontal scroll on mobile */
   overflow-x: hidden;
 }
 
-/* --- Azure Brand Customization --- */
-
-/* Customize text selection color to match Azure Blue */
 ::selection {
-  background-color: #0078D4; /* Azure Blue */
+  background-color: #0078D4; 
   color: #ffffff;
 }
 
-/* --- Modern Scrollbar --- */
-
-/* For Webkit browsers (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -39,12 +31,9 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0078D4; /* Azure Blue on hover */
+  background: #0078D4; 
 }
 
-/* --- Utilities --- */
-
-/* Smooth gradient text utility */
 .text-gradient-azure {
   background: linear-gradient(135deg, #0078D4 0%, #00BCF2 100%);
   -webkit-background-clip: text;
@@ -52,13 +41,12 @@ body {
   background-clip: text;
 }
 
-/* Card hover effect enhancement */
 .card-hover-effect {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-hover-effect:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px -10px rgba(0, 120, 212, 0.15); /* Subtle Blue Shadow */
+  box-shadow: 0 12px 24px -10px rgba(0, 120, 212, 0.15); 
   border-color: rgba(0, 120, 212, 0.3);
 }

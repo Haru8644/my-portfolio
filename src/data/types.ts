@@ -37,6 +37,21 @@ export interface Project {
   highlights: ProjectHighlight[];
 }
 
+export interface Account {
+  platform: string;
+  username: string;
+  url: string;
+  icon: IconType;
+  color?: string;
+}
+
+export interface TimelineItem {
+  period: string;
+  title: LocalizedString;
+  organization: LocalizedString;
+  description?: LocalizedString;
+}
+
 export interface Profile {
   name: LocalizedString;
   title: LocalizedString;
@@ -44,13 +59,7 @@ export interface Profile {
   department: LocalizedString;
   catchphrase: LocalizedString;
   description: LocalizedString;
-  atcoder: {
-    rating: number;
-    rank: LocalizedString;
-  };
   socials: {
-    github: string;
-    atcoder: string;
     email: string;
   };
 }

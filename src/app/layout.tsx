@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 
-// Optimize fonts: Load English and Japanese subsets
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
@@ -20,7 +19,6 @@ export const metadata: Metadata = {
   authors: [{ name: "Haruki Ino" }],
   creator: "Haruki Ino",
   
-  // Open Graph: Controls how the link looks when shared on Slack/Teams/LinkedIn
   openGraph: {
     type: "website",
     locale: "ja_JP",
