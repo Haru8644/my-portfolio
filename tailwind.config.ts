@@ -9,14 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        azure: "#0078D4", // Microsoft Azure Blue
-        atcoder: "#00C0C0", // AtCoder Cyan
+        azure: "#0078D4", 
+        atcoder: "#00C0C0", 
       },
     },
   },
   plugins: [
-    // DaisyUIは型定義がないため、requireを使うとTSエラーが出ますが、
-    // 以下のコメントでその行だけエラーを無視するのが一般的な解決策です。
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     require("daisyui"),
   ],

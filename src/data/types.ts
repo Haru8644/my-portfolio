@@ -1,6 +1,6 @@
 import type { IconType } from "react-icons";
 
-export type Language = 'en' | 'ja';
+export type Language = "en" | "ja";
 
 export interface LocalizedString {
   en: string;
@@ -27,12 +27,18 @@ export interface ProjectHighlight {
   text: LocalizedString;
 }
 
+export interface ProjectImage {
+  src: string;
+  alt: LocalizedString;
+}
+
 export interface Project {
   title: LocalizedString;
-  status: 'In Development' | 'Production Used';
+  status: "In Development" | "Production Used";
   tags: string[];
   description: LocalizedString;
   longDescription: LocalizedString;
+  images?: ProjectImage[];
   links: ProjectLink;
   highlights: ProjectHighlight[];
 }
