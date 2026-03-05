@@ -1,4 +1,4 @@
-# # HarukiIno.dev - Cloud-Native Engineering Portfolio
+# HarukiIno.dev - Cloud-Native Engineering Portfolio
 
 ![Azure Deploy](https://img.shields.io/badge/Deploy-Azure_Static_Web_Apps-0078D4?logo=microsoftazure)
 ![Next.js](https://img.shields.io/badge/Next.js-App_Router-black?logo=next.js)
