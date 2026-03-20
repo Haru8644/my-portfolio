@@ -83,12 +83,71 @@ export const EDUCATION: TimelineItem[] = [
 
 export const EXPERIENCE: TimelineItem[] = [
   {
-    period: "2025 - Present",
-    title: { en: "Backend Engineer Intern", ja: "バックエンドエンジニア (長期インターン)" },
-    organization: { en: "Howtelevision, Inc.", ja: "株式会社ハウテレビジョン" },
+    period: "2026.02 - Present",
+    title: {
+      en: "Backend Curriculum Development / Marketing Operations",
+      ja: "バックエンド教材開発 / マーケティング施策運用",
+    },
+    organization: {
+      en: "Howtelevision, Inc.",
+      ja: "株式会社ハウテレビジョン",
+    },
     description: {
-      en: "Developing backend curriculum for an engineering bootcamp and automating direct messaging for the 'Gaishi Shukatsu' platform.",
-      ja: "エンジニアブートキャンプ向けのバックエンド教材の開発と、「外資就活ドットコム」のスカウトDM配信システムの構築・運用を担当。",
+      en:
+        "Contributing across both engineering and business functions. On the engineering side, I develop backend curriculum for engineer-focused startup events, designing content that helps participants understand and apply technical concepts in practice. On the business side, I support outreach initiatives for 'GaishiShukatsu' by analyzing response data such as open and click-through rates and improving execution quality through a rapid hypothesis–execution–review cycle.",
+      ja:
+        "技術とビジネスの両面から価値提供に取り組んでいます。技術面では、エンジニア向けスタートアップイベントのバックエンド教材開発を担当し、参加者が技術を実践的に理解できるコンテンツ設計に取り組んでいます。ビジネス面では、「外資就活ドットコム」の集客施策において、開封率・クリック率などの反応データを分析しながら、仮説立案→実行→振り返りのサイクルを高速で回し、施策精度の向上に貢献しています。",
+    },
+  },
+  {
+    period: "2024.09 - Present",
+    title: {
+      en: "Internal Systems Development / Operations Improvement",
+      ja: "社内システム開発 / 業務改善",
+    },
+    organization: {
+      en: "BE-AM Co., Ltd.",
+      ja: "株式会社BE-AM",
+    },
+    description: {
+      en:
+        "Engaged in internal systems development and operational improvement from problem discovery and requirements definition to infrastructure setup, implementation, and post-release refinement. Worked on planning and developing a conference-room booking system to resolve scheduling conflicts, building and operating an SFTP server with clearly designed permission management, automating internal workflows with VBA, and supporting requirements definition and UI/UX design for a tablet-based reception system. Focused not only on implementation, but also on real-world adoption and continuous improvement based on on-site feedback.",
+      ja:
+        "社内課題の発見から要件定義、インフラ構築、実装、リリース後の改善まで一貫して取り組んでいます。予約バッティングの解消を目的とした会議室予約システムの企画・開発、権限設計を含むSFTPサーバーの構築・運用、VBAによる社内業務の自動化、タブレット受付システムの要件定義・UI/UX設計などを担当してきました。実装だけでなく、現場で実際に使われることを前提に、運用定着と継続的な改善まで意識して進めています。",
+    },
+  },
+  {
+    period: "2025.11",
+    title: {
+      en: "0→1 Product Development Program",
+      ja: "0→1プロダクト開発プログラム",
+    },
+    organization: {
+      en: "Howtelevision, Inc. / 4days Internship",
+      ja: "株式会社ハウテレビジョン / 4daysインターン",
+    },
+    description: {
+      en:
+        "Experienced rapid team-based product development in a four-day on-site program. Worked on persona definition, service concept alignment, and front-end implementation through pair development, while also participating in discussions on what user problem the team should solve and why. This experience strengthened my customer-centric thinking, communication under ambiguity, and ability to connect implementation decisions with product value.",
+      ja:
+        "4日間の対面プログラムで、短期間のチーム開発による0→1プロダクト開発を経験しました。顧客ペルソナの定義、サービスの方向性の合意形成、フロント実装のペア開発に取り組みながら、「誰のどんな課題を解くのか」をチームで議論し、実装と最終発表につなげました。この経験を通して、顧客視点で課題を捉える力、曖昧な状況で合意形成する力、実装を価値に結びつけて説明する力を伸ばしました。",
+    },
+  },
+  {
+    period: "2025.09",
+    title: {
+      en: "Hackathon Participant / Product Development",
+      ja: "ハッカソン参加 / プロダクト開発",
+    },
+    organization: {
+      en: "Engineer Guild Hackathon",
+      ja: "Engineer Guild Hackathon",
+    },
+    description: {
+      en:
+        "Completed a one-week 0→1 development cycle in a four-member team, covering persona definition, technology selection, implementation, and final presentation. In addition to development, I mainly led the structure and delivery of the pitch, focusing on explaining how each technical decision solved concrete user problems rather than simply listing features. Through this experience, I learned how to translate engineering choices into business value and communicate them clearly to both technical and non-technical audiences.",
+      ja:
+        "4人チームで、ペルソナ定義・技術選定・実装・発表までを1週間でやり切る0→1開発を経験しました。開発に関わりつつ、主にプレゼン資料の構成と発表を主導し、機能の羅列ではなく「その技術がユーザーのどんな課題をどう解決するのか」を軸に価値を伝えることを意識しました。この経験を通して、技術的な判断をビジネス価値へ翻訳し、非エンジニアにも伝わる形で表現する力を実践的に学びました。",
     },
   },
 ];
