@@ -23,7 +23,7 @@ import { TbTrophy } from "react-icons/tb";
 
 export const PROFILE: Profile = {
   name: { en: "Haruki Ino", ja: "稲生 遥希" },
-  title: { en: "Aspiring Technical Specialist", ja: "テクニカルスペシャリスト志望" },
+  title: { en: "", ja: "" },
   university: { en: "Tokyo University of Science", ja: "東京理科大学" },
   department: { en: "Dept. of Physical Engineering (B2)", ja: "先進工学部 物理工学科 (B2)" },
 
