@@ -1,25 +1,29 @@
-'use client';
+"use client";
 
-import { ACCOUNTS } from '@/data/constants';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink } from "lucide-react";
+import { ACCOUNTS } from "@/data/constants";
 
 export const Accounts = () => {
   return (
-    <div className="flex flex-wrap gap-4 mt-8 justify-center md:justify-start">
+    <div className="flex flex-wrap gap-3 md:gap-4">
       {ACCOUNTS.map((account) => (
-        <a 
+        <a
           key={account.platform}
           href={account.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-3 px-5 py-3 bg-base-100 border border-base-300 rounded-xl hover:shadow-md transition-all group"
+          className="interactive-card glow-ring group flex items-center gap-3 rounded-2xl border border-white/80 bg-white/80 px-4 py-3 shadow-[0_12px_32px_-22px_rgba(15,23,42,0.28)] backdrop-blur-sm"
         >
-          <account.icon className={`w-6 h-6 transition-colors ${account.color}`} />
-          <div className="text-left">
-            <p className="text-xs text-gray-500 font-semibold">{account.platform}</p>
-            <p className="font-bold text-sm">{account.username}</p>
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-900 text-white transition group-hover:scale-105">
+            <account.icon className={`h-5 w-5 transition-colors ${account.color ?? ""}`} />
           </div>
-          <ExternalLink className="w-3 h-3 text-gray-400 group-hover:text-azure ml-2" />
+          <div className="min-w-0 text-left">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400">
+              {account.platform}
+            </p>
+            <p className="truncate text-sm font-semibold text-slate-800">{account.username}</p>
+          </div>
+          <ExternalLink className="ml-1 h-4 w-4 text-slate-300 transition group-hover:text-sky-600" />
         </a>
       ))}
     </div>
