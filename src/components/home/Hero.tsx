@@ -1,59 +1,128 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { useLanguage } from '../../context/LanguageContext';
-import { PROFILE } from '../../data/constants';
-import { Accounts } from './Accounts';
+import { motion } from "framer-motion";
+import { ArrowRight, Mail } from "lucide-react";
+
+import { useLanguage } from "@/context/LanguageContext";
+import { PROFILE } from "@/data/constants";
+import { Accounts } from "./Accounts";
 
 export const Hero = () => {
   const { lang } = useLanguage();
 
   return (
-    <section className="hero min-h-[85vh] bg-base-100 relative overflow-hidden flex items-center">
-      <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-azure/10 rounded-full blur-3xl -z-10" />
-      
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="max-w-4xl">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="badge badge-outline badge-lg mb-6 text-gray-500">
-              {PROFILE.university[lang]}
-            </div>
-            
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-8 leading-tight tracking-tight">
-            {lang === 'ja' ? (
-              PROFILE.catchphrase.ja.split('、').map((text, i) => (
-                <span key={i} className="block">
-                  {text}{i === 0 && '、'}
-                </span>
-              ))
-            ) : (
-              PROFILE.catchphrase.en
-            )}
-          </h1>
-            
-            <p className="py-4 text-lg text-gray-600 leading-relaxed max-w-2xl whitespace-pre-line border-l-4 border-azure pl-6 bg-base-200/30 rounded-r-lg">
-              {PROFILE.description[lang]}
-            </p>
-            
-            <div className="mt-10">
-              <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">Accounts & Links</p>
-              <Accounts />
+    <section id="top" className="relative px-4 pb-10 pt-8 md:px-6 md:pt-12">
+      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="glass-panel-strong relative overflow-hidden rounded-[2rem] p-7 md:p-10 lg:p-12"
+        >
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sky-300/70 to-transparent" />
+          <div className="absolute -right-20 top-10 h-44 w-44 rounded-full bg-sky-300/20 blur-3xl" />
+          <div className="absolute bottom-0 left-0 h-32 w-32 rounded-full bg-indigo-300/15 blur-3xl" />
+
+          <div className="relative z-10">
+            <div className="mb-6 flex flex-wrap items-center gap-3">
+              <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-semibold text-sky-700">
+                {PROFILE.university[lang]}
+              </span>
             </div>
 
-            <div className="flex gap-4 mt-12">
-              <a href="#projects" className="btn btn-primary bg-azure border-azure hover:bg-blue-700 text-white px-8 rounded-full shadow-lg">
-                View Projects
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h1 className="max-w-4xl text-4xl font-black leading-[1.08] tracking-tight text-slate-900 md:text-6xl xl:text-7xl">
+                  {lang === "ja" ? (
+                    <>
+                      <span className="block">複雑な技術を紐解き、</span>
+                      <span className="block text-gradient-azure">現場が使いこなせる</span>
+                      <span className="block">「当たり前」を創る。</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="block">Unravel complex technology.</span>
+                      <span className="block text-gradient-azure">Build the obvious</span>
+                      <span className="block">that teams can truly use.</span>
+                    </>
+                  )}
+                </h1>
+              </div>
+
+              <p className="max-w-3xl whitespace-pre-line text-base leading-8 text-slate-600 md:text-lg">
+                {PROFILE.description[lang]}
+              </p>
+            </div>
+
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+              <a
+                href="#projects"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-sky-600 to-indigo-600 px-6 py-3.5 text-sm font-semibold text-white shadow-[0_18px_36px_-20px_rgba(37,99,235,0.72)] transition hover:translate-y-[-1px]"
+              >
+                {lang === "en" ? "View Featured Work" : "Featured Workを見る"}
+                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
               </a>
-              <a href={PROFILE.socials.email} className="btn btn-outline border-azure text-azure hover:bg-azure hover:text-white rounded-full px-8">
-                Contact Me
+              <a
+                href="#showcase"
+                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white/80 px-6 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-sky-200 hover:text-sky-700"
+              >
+                {lang === "en" ? "Browse Product Screens" : "プロダクト画面を見る"}
+              </a>
+              <a
+                href={PROFILE.socials.email}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-transparent px-6 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-white/70"
+              >
+                <Mail className="h-4 w-4" />
+                {lang === "en" ? "Contact Me" : "連絡する"}
               </a>
             </div>
-          </motion.div>
-        </div>
+
+            <div className="mt-10 border-t border-slate-200/80 pt-8">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
+                {lang === "en" ? "Accounts & Links" : "アカウント / リンク"}
+              </p>
+              <Accounts />
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+          className="grid gap-4"
+        >
+          <div className="interactive-card glass-panel overflow-hidden rounded-[2rem] p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
+              {lang === "en" ? "Focus" : "志向"}
+            </p>
+            <p className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
+              {lang === "en" ? "Cloud x Product x Operations" : "Cloud × Product × Operations"}
+            </p>
+            <p className="mt-3 text-sm leading-7 text-slate-600">
+              {lang === "en"
+                ? "Not only implementation. I design systems, operational fit, and stakeholder alignment so that technology keeps working after release."
+                : "実装だけで終わらせず、運用定着や合意形成まで含めて、リリース後も機能し続ける仕組みを設計します。"}
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="interactive-card glass-panel rounded-[1.75rem] p-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">
+                {lang === "en" ? "Current Goal" : "目標"}
+              </p>
+              <p className="mt-3 text-lg font-bold text-slate-900">Software Engineer</p>
+            </div>
+            <div className="interactive-card glass-panel rounded-[1.75rem] p-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">
+                {lang === "en" ? "Strength" : "強み"}
+              </p>
+              <p className="mt-3 text-lg font-bold text-slate-900">
+                {lang === "en" ? "Structure + Delivery" : "構造化 + やり切る力"}
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

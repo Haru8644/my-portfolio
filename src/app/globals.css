@@ -4,15 +4,45 @@
 
 :root {
   --font-primary: var(--font-inter), var(--font-noto-sans-jp), sans-serif;
+  --page-bg: #f6f9fc;
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-strong: rgba(255, 255, 255, 0.92);
+  --line-soft: rgba(148, 163, 184, 0.18);
+  --shadow-soft: 0 20px 60px -26px rgba(15, 23, 42, 0.18);
+  --shadow-glow: 0 24px 80px -32px rgba(14, 116, 217, 0.28);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  min-height: 100vh;
   font-family: var(--font-primary);
   overflow-x: hidden;
+  color: #0f172a;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(14, 165, 233, 0.14), transparent 24%),
+    radial-gradient(circle at 100% 10%, rgba(99, 102, 241, 0.12), transparent 22%),
+    radial-gradient(circle at 50% 100%, rgba(34, 197, 94, 0.08), transparent 26%),
+    linear-gradient(180deg, #fbfdff 0%, var(--page-bg) 48%, #f8fbff 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle at center, black 36%, transparent 88%);
+  opacity: 0.45;
 }
 
 ::selection {
-  background-color: #0078D4; 
+  background-color: #0078d4;
   color: #ffffff;
 }
 
@@ -21,32 +51,108 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: rgba(226, 232, 240, 0.72);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 5px;
-  border: 2px solid #f1f1f1;
+  background: linear-gradient(180deg, rgba(14, 116, 217, 0.82), rgba(99, 102, 241, 0.82));
+  border-radius: 9999px;
+  border: 2px solid rgba(226, 232, 240, 0.82);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0078D4; 
+  background: linear-gradient(180deg, rgba(2, 132, 199, 0.95), rgba(79, 70, 229, 0.95));
 }
 
 .text-gradient-azure {
-  background: linear-gradient(135deg, #0078D4 0%, #00BCF2 100%);
+  background: linear-gradient(135deg, #0369a1 0%, #0078d4 35%, #4f46e5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.card-hover-effect {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.glass-panel {
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow-soft);
 }
 
-.card-hover-effect:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px -10px rgba(0, 120, 212, 0.15); 
-  border-color: rgba(0, 120, 212, 0.3);
+.glass-panel-strong {
+  background: var(--surface-strong);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.84);
+  box-shadow: var(--shadow-glow);
+}
+
+.section-shell {
+  position: relative;
+}
+
+.section-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 2rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.22));
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.interactive-card {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.interactive-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 70px -34px rgba(15, 23, 42, 0.24);
+  border-color: rgba(14, 116, 217, 0.22);
+}
+
+.glow-ring {
+  position: relative;
+}
+
+.glow-ring::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.36), rgba(99, 102, 241, 0.2), rgba(255, 255, 255, 0.22));
+  z-index: -1;
+  filter: blur(12px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-ring:hover::after {
+  opacity: 1;
+}
+
+.soft-divider {
+  border-color: var(--line-soft);
+}
+
+.floating-orb {
+  animation: float-orb 12s ease-in-out infinite;
+}
+
+.floating-orb-slow {
+  animation: float-orb 16s ease-in-out infinite;
+}
+
+@keyframes float-orb {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) scale(1.04);
+  }
 }
