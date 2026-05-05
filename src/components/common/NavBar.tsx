@@ -5,12 +5,14 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const navItems = {
   en: [
+    { label: "Impact", href: "#impact" },
     { label: "Screens", href: "#showcase" },
     { label: "Journey", href: "#journey" },
     { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
   ],
   ja: [
+    { label: "実績", href: "#impact" },
     { label: "画面", href: "#showcase" },
     { label: "学歴・経歴", href: "#journey" },
     { label: "スキル", href: "#skills" },

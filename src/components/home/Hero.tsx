@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { useLanguage } from "@/context/LanguageContext";
 import { PROFILE } from "@/data/constants";
@@ -35,15 +35,15 @@ export const Hero = () => {
                 <h1 className="max-w-4xl text-4xl font-black leading-[1.08] tracking-tight text-slate-900 md:text-6xl xl:text-7xl">
                   {lang === "ja" ? (
                     <>
-                      <span className="block">複雑な技術を紐解き、</span>
-                      <span className="block text-gradient-azure">現場が使いこなせる</span>
-                      <span className="block">「当たり前」を創る。</span>
+                      <span className="block">曖昧な課題を、</span>
+                      <span className="block text-gradient-azure">使われ続ける仕組みへ</span>
+                      <span className="block">実装で落とし込む。</span>
                     </>
                   ) : (
                     <>
-                      <span className="block">Unravel complex technology.</span>
-                      <span className="block text-gradient-azure">Build the obvious</span>
-                      <span className="block">that teams can truly use.</span>
+                      <span className="block">Frame product problems.</span>
+                      <span className="block text-gradient-azure">Build systems</span>
+                      <span className="block">teams keep using.</span>
                     </>
                   )}
                 </h1>
@@ -68,13 +68,6 @@ export const Hero = () => {
               >
                 {lang === "en" ? "Browse Product Screens" : "プロダクト画面を見る"}
               </a>
-              <a
-                href={PROFILE.socials.email}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-transparent px-6 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-white/70"
-              >
-                <Mail className="h-4 w-4" />
-                {lang === "en" ? "Contact Me" : "連絡する"}
-              </a>
             </div>
 
             <div className="mt-10 border-t border-slate-200/80 pt-8">
@@ -94,31 +87,39 @@ export const Hero = () => {
         >
           <div className="interactive-card glass-panel overflow-hidden rounded-[2rem] p-6">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">
-              {lang === "en" ? "Focus" : "志向"}
+              {lang === "en" ? "Strength" : "強み"}
             </p>
             <p className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
-              {lang === "en" ? "Cloud x Product x Operations" : "Cloud × Product × Operations"}
+              {lang === "en"
+                ? "Structure the problem, then carry it through implementation"
+                : "課題を構造化し、実装までやり切る"}
             </p>
             <p className="mt-3 text-sm leading-7 text-slate-600">
               {lang === "en"
-                ? "Not only implementation. I design systems, operational fit, and stakeholder alignment so that technology keeps working after release."
-                : "実装だけで終わらせず、運用定着や合意形成まで含めて、リリース後も機能し続ける仕組みを設計します。"}
+                ? "I value not only building features, but also clarifying responsibilities, notifications, and operational rules so a system remains usable in practice."
+                : "機能を作るだけでなく、責任分界・通知・権限・運用ルールまで整理し、現場で使われる仕組みに落とし込むことを重視しています。"}
             </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="interactive-card glass-panel rounded-[1.75rem] p-6">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">
-                {lang === "en" ? "Current Goal" : "目標"}
+                {lang === "en" ? "Mindset" : "マインドセット"}
               </p>
-              <p className="mt-3 text-lg font-bold text-slate-900">Software Engineer</p>
+              <p className="mt-3 text-lg font-bold text-slate-900">
+                {lang === "en"
+                  ? "Product-minded Engineering"
+                  : "Product-minded Engineering"}
+              </p>
             </div>
             <div className="interactive-card glass-panel rounded-[1.75rem] p-6">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">
-                {lang === "en" ? "Strength" : "強み"}
+                {lang === "en" ? "Focus" : "重視点"}
               </p>
               <p className="mt-3 text-lg font-bold text-slate-900">
-                {lang === "en" ? "Structure + Delivery" : "構造化 + やり切る力"}
+                {lang === "en"
+                  ? "User behavior and operational adoption"
+                  : "ユーザー行動と運用定着"}
               </p>
             </div>
           </div>

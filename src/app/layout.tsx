@@ -10,13 +10,26 @@ const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
 });
 
+const siteDescription =
+  "Product-minded engineering portfolio by Haruki Ino: problem framing, full-stack implementation, and operational adoption through real internal products.";
+
 export const metadata: Metadata = {
   title: {
-    default: "Haruki - Portfolio",
-    template: "%s | Haruki - Portfolio",
+    default: "Haruki Ino - Portfolio",
+    template: "%s | Haruki Ino",
   },
-  description: "Unravel complex technology and build the 'obvious' that teams can truly use.",
-  keywords: ["Azure", "Microsoft", "Technical Specialist", "Portfolio", "C#", "Next.js"],
+  description: siteDescription,
+  keywords: [
+    "Product-minded Engineering",
+    "Full-stack Development",
+    "Product Case Study",
+    "C#",
+    "ASP.NET Core",
+    "Blazor",
+    "Next.js",
+    "TypeScript",
+    "Portfolio",
+  ],
   authors: [{ name: "Haruki Ino" }],
   creator: "Haruki Ino",
 
@@ -24,14 +37,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ja_JP",
     url: "https://black-mud-02aa94010.6.azurestaticapps.net/",
-    title: "Haruki - Portfolio",
-    description: "Unravel complex technology and build the 'obvious' that teams can truly use.",
-    siteName: "Haruki - Portfolio",
+    title: "Haruki Ino - Portfolio",
+    description: siteDescription,
+    siteName: "Haruki Ino Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Haruki - Portfolio",
-    description: "Unravel complex technology and build the 'obvious' that teams can truly use.",
+    title: "Haruki Ino - Portfolio",
+    description: siteDescription,
   },
 };
 
@@ -43,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="ja" data-theme="corporate" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${notoSansJP.variable} font-sans text-slate-800 bg-base-100 min-h-screen antialiased`}
+        className={`${inter.variable} ${notoSansJP.variable} min-h-screen bg-base-100 font-sans text-slate-800 antialiased`}
       >
         {children}
       </body>

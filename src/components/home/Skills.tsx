@@ -15,7 +15,7 @@ export const Skills = () => {
         <div className="mb-10 text-center md:mb-14">
           <p className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-400">Technical Stack</p>
           <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 md:text-4xl">
-            Technical Stack
+            {lang === "en" ? "Technical Stack" : "Technical Stack"}
           </h2>
         </div>
 

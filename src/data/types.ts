@@ -27,6 +27,16 @@ export interface ProjectHighlight {
   text: LocalizedString;
 }
 
+export interface ProjectDetailItem {
+  title: LocalizedString;
+  description: LocalizedString;
+}
+
+export interface ProjectDetailSection {
+  title: LocalizedString;
+  items: ProjectDetailItem[];
+}
+
 export interface ProjectImage {
   src: string;
   alt: LocalizedString;
@@ -41,6 +51,7 @@ export interface Project {
   images?: ProjectImage[];
   links: ProjectLink;
   highlights: ProjectHighlight[];
+  detailSections?: ProjectDetailSection[];
 }
 
 export interface Account {
