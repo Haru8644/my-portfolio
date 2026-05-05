@@ -1,13 +1,15 @@
-import { Profile, Project, SkillCategory, Account, TimelineItem } from "./types";
 import {
-  SiGo,
+  Profile,
+  Project,
+  SkillCategory,
+  Account,
+  TimelineItem,
+} from "./types";
+import {
   SiTypescript,
   SiCplusplus,
   SiC,
-  SiHtml5,
-  SiCss3,
   SiNodedotjs,
-  SiArduino,
   SiDotnet,
   SiReact,
   SiNextdotjs,
@@ -17,27 +19,38 @@ import {
   SiBlazor,
   SiGithub,
   SiLinkedin,
+  SiHtml5,
+  SiCss3,
+  SiPostgresql,
+  SiGo,
 } from "react-icons/si";
-import { VscAzure, VscCloud, VscCode, VscDatabase } from "react-icons/vsc";
+import {
+  VscAzure,
+  VscCode,
+  VscDatabase,
+} from "react-icons/vsc";
 import { TbTrophy } from "react-icons/tb";
 
 export const PROFILE: Profile = {
   name: { en: "Haruki Ino", ja: "稲生 遥希" },
   title: { en: "", ja: "" },
   university: { en: "Tokyo University of Science", ja: "東京理科大学" },
-  department: { en: "Dept. of Physical Engineering (B2)", ja: "先進工学部 物理工学科 (B2)" },
+  department: {
+    en: "Dept. of Physical Engineering / Class of 2028",
+    ja: "先進工学部 物理工学科 / 2028年卒",
+  },
 
   catchphrase: {
-    en: 'UNRAVEL COMPLEX TECHNOLOGY, AND BUILD THE "OBVIOUS" THAT TEAMS CAN TRULY USE.',
-    ja: "複雑な技術を紐解き、現場が使いこなせる「当たり前」を創る。",
+    en: "TURN AMBIGUOUS PRODUCT PROBLEMS INTO SYSTEMS THAT TEAMS CAN KEEP USING.",
+    ja: "曖昧な課題を、現場で使われ続ける仕組みに落とし込む。",
   },
   description: {
     en:
-      'With structural thinking rooted in physical engineering, and hands-on experience across full-stack development and infrastructure, I solve business problems.\n\n' +
-      'My strength is not "build and done." I go further—designing operations that fit real workflows and driving stakeholder alignment—to build systems where technology maximizes an organization\'s potential.',
+      "I connect product thinking with full-stack implementation. My focus is not only shipping features, but also clarifying user behavior, responsibilities, notifications, permissions, and operational rules so the product keeps creating value after release.\n\n" +
+      "In MeetingRoomBooker, I led requirements, UI/UX, API/DB design, authentication, notifications, and post-release improvement, reducing 5-6 monthly booking conflicts to zero within two months.",
     ja:
-      "物理工学由来の構造的な思考力と、フルスタックな開発・インフラ構築経験を武器に、ビジネス課題を解決します。\n\n" +
-      "強みは「システムを作って終わり」にしないこと。現場に徹底して寄り添う運用設計から関係者の合意形成まで踏み込み、技術が組織のポテンシャルを最大限に引き出す仕組みを構築します。",
+      "プロダクト視点とフルスタック実装を接続し、機能を作るだけでなく、ユーザー行動・責任分界・通知・権限・運用ルールまで整理して、リリース後も価値が続く仕組みを設計します。\n\n" +
+      "MeetingRoomBookerでは、要件定義、UI/UX、API/DB、認証・認可、通知、リリース後改善まで担当し、月5〜6回発生していた重複予約を導入後2か月でゼロにしました。",
   },
 
   socials: {
@@ -73,10 +86,13 @@ export const EDUCATION: TimelineItem[] = [
   {
     period: "2024 - Present",
     title: { en: "Bachelor of Engineering", ja: "学士（工学）" },
-    organization: { en: "Tokyo University of Science", ja: "東京理科大学 先進工学部 物理工学科" },
+    organization: {
+      en: "Tokyo University of Science",
+      ja: "東京理科大学 先進工学部 物理工学科",
+    },
     description: {
-      en: "GPA: 3.x / Focus on Quantum Mechanics and Statistical Physics",
-      ja: "物理学（量子力学・統計力学）を専攻しつつ、情報科学への応用を研究",
+      en: "Physical Engineering foundation with a focus on structural thinking, modeling, and software implementation.",
+      ja: "物理工学を通じて、構造的に考える力・モデル化する力・実装へ落とし込む力を磨いています。",
     },
   },
 ];
@@ -85,18 +101,16 @@ export const EXPERIENCE: TimelineItem[] = [
   {
     period: "2026.02 - Present",
     title: {
-      en: "Backend Curriculum Development / Marketing Operations",
-      ja: "バックエンド教材開発 / マーケティング施策運用",
+      en: "Marketing Operations / Growth Initiatives",
+      ja: "マーケティング施策運用 / グロース施策",
     },
     organization: {
       en: "Howtelevision, Inc.",
       ja: "株式会社ハウテレビジョン",
     },
     description: {
-      en:
-        "Contributing across both engineering and business functions. On the engineering side, I develop backend curriculum for engineer-focused startup events, designing content that helps participants understand and apply technical concepts in practice. On the business side, I support outreach initiatives for 'GaishiShukatsu' by analyzing response data such as open and click-through rates and improving execution quality through a rapid hypothesis–execution–review cycle.",
-      ja:
-        "技術とビジネスの両面から価値提供に取り組んでいます。技術面では、エンジニア向けスタートアップイベントのバックエンド教材開発を担当し、参加者が技術を実践的に理解できるコンテンツ設計に取り組んでいます。ビジネス面では、「外資就活ドットコム」の集客施策において、開封率・クリック率などの反応データを分析しながら、仮説立案→実行→振り返りのサイクルを高速で回し、施策精度の向上に貢献しています。",
+      en: "Involved in marketing initiatives for 'GaishiShukatsu', where I help improve outreach quality through a fast hypothesis–execution–review cycle. I analyze user response data such as open and click-through rates, organize which messages resonate with which audience segments, and connect those findings to the next action. Rather than just sending campaigns, I focus on understanding user behavior and improving the relevance of each communication.",
+      ja: "『外資就活ドットコム』のマーケティング施策運用に取り組んでいます。開封率・クリック率などの行動データをもとに、どのユーザー層にどの訴求が反応されたのかを整理し、次回施策の仮説につなげています。単に配信を回すのではなく、ユーザーがどの情報で興味を持ち、どこで反応し、次にどう動くのかを捉えながら、仮説立案→実行→振り返りのサイクルを高速で回し、施策精度の向上に貢献しています。",
     },
   },
   {
@@ -110,10 +124,8 @@ export const EXPERIENCE: TimelineItem[] = [
       ja: "株式会社BE-AM",
     },
     description: {
-      en:
-        "Engaged in internal systems development and operational improvement from problem discovery and requirements definition to infrastructure setup, implementation, and post-release refinement. Worked on planning and developing a conference-room booking system to resolve scheduling conflicts, building and operating an SFTP server with clearly designed permission management, automating internal workflows with VBA, and supporting requirements definition and UI/UX design for a tablet-based reception system. Focused not only on implementation, but also on real-world adoption and continuous improvement based on on-site feedback.",
-      ja:
-        "社内課題の発見から要件定義、インフラ構築、実装、リリース後の改善まで一貫して取り組んでいます。予約バッティングの解消を目的とした会議室予約システムの企画・開発、権限設計を含むSFTPサーバーの構築・運用、VBAによる社内業務の自動化、タブレット受付システムの要件定義・UI/UX設計などを担当してきました。実装だけでなく、現場で実際に使われることを前提に、運用定着と継続的な改善まで意識して進めています。",
+      en: "Engaged in internal systems development and operational improvement from problem discovery and requirements definition to infrastructure setup, implementation, and post-release refinement. Worked on planning and developing a conference-room booking system to resolve scheduling conflicts, building and operating an SFTP server with clearly designed permission management, automating internal workflows with VBA, and supporting requirements definition and UI/UX design for a tablet-based reception system. Focused not only on implementation, but also on real-world adoption and continuous improvement based on on-site feedback.",
+      ja: "社内課題の発見から要件定義、インフラ構築、実装、リリース後の改善まで一貫して取り組んでいます。予約バッティングの解消を目的とした会議室予約システムの企画・開発、権限設計を含むSFTPサーバーの構築・運用、VBAによる社内業務の自動化、タブレット受付システムの要件定義・UI/UX設計などを担当してきました。実装だけでなく、現場で実際に使われることを前提に、運用定着と継続的な改善まで意識して進めています。",
     },
   },
   {
@@ -127,10 +139,8 @@ export const EXPERIENCE: TimelineItem[] = [
       ja: "株式会社ハウテレビジョン / 4daysインターン",
     },
     description: {
-      en:
-        "Experienced rapid team-based product development in a four-day on-site program. Worked on persona definition, service concept alignment, and front-end implementation through pair development, while also participating in discussions on what user problem the team should solve and why. This experience strengthened my customer-centric thinking, communication under ambiguity, and ability to connect implementation decisions with product value.",
-      ja:
-        "4日間の対面プログラムで、短期間のチーム開発による0→1プロダクト開発を経験しました。顧客ペルソナの定義、サービスの方向性の合意形成、フロント実装のペア開発に取り組みながら、「誰のどんな課題を解くのか」をチームで議論し、実装と最終発表につなげました。この経験を通して、顧客視点で課題を捉える力、曖昧な状況で合意形成する力、実装を価値に結びつけて説明する力を伸ばしました。",
+      en: "Experienced rapid team-based product development in a four-day on-site program. Worked on persona definition, service concept alignment, and front-end implementation through pair development, while also participating in discussions on what user problem the team should solve and why. This experience strengthened my customer-centric thinking, communication under ambiguity, and ability to connect implementation decisions with product value.",
+      ja: "4日間の対面プログラムで、短期間のチーム開発による0→1プロダクト開発を経験しました。顧客ペルソナの定義、サービスの方向性の合意形成、フロント実装のペア開発に取り組みながら、「誰のどんな課題を解くのか」をチームで議論し、実装と最終発表につなげました。この経験を通して、顧客視点で課題を捉える力、曖昧な状況で合意形成する力、実装を価値に結びつけて説明する力を伸ばしました。",
     },
   },
   {
@@ -144,50 +154,50 @@ export const EXPERIENCE: TimelineItem[] = [
       ja: "Engineer Guild Hackathon",
     },
     description: {
-      en:
-        "Completed a one-week 0→1 development cycle in a four-member team, covering persona definition, technology selection, implementation, and final presentation. In addition to development, I mainly led the structure and delivery of the pitch, focusing on explaining how each technical decision solved concrete user problems rather than simply listing features. Through this experience, I learned how to translate engineering choices into business value and communicate them clearly to both technical and non-technical audiences.",
-      ja:
-        "4人チームで、ペルソナ定義・技術選定・実装・発表までを1週間でやり切る0→1開発を経験しました。開発に関わりつつ、主にプレゼン資料の構成と発表を主導し、機能の羅列ではなく「その技術がユーザーのどんな課題をどう解決するのか」を軸に価値を伝えることを意識しました。この経験を通して、技術的な判断をビジネス価値へ翻訳し、非エンジニアにも伝わる形で表現する力を実践的に学びました。",
+      en: "Completed a one-week 0→1 development cycle in a four-member team, covering persona definition, technology selection, implementation, and final presentation. In addition to development, I mainly led the structure and delivery of the pitch, focusing on explaining how each technical decision solved concrete user problems rather than simply listing features. Through this experience, I learned how to translate engineering choices into business value and communicate them clearly to both technical and non-technical audiences.",
+      ja: "4人チームで、ペルソナ定義・技術選定・実装・発表までを1週間でやり切る0→1開発を経験しました。開発に関わりつつ、主にプレゼン資料の構成と発表を主導し、機能の羅列ではなく「その技術がユーザーのどんな課題をどう解決するのか」を軸に価値を伝えることを意識しました。この経験を通して、技術的な判断をビジネス価値へ翻訳し、非エンジニアにも伝わる形で表現する力を実践的に学びました。",
     },
   },
 ];
 
 export const SKILLS: SkillCategory[] = [
   {
-    category: { en: "Languages", ja: "プログラミング言語" },
+    category: { en: "Languages / Query", ja: "言語・クエリ" },
     items: [
       { name: "C#", icon: SiDotnet },
-      { name: "Go", icon: SiGo },
       { name: "TypeScript", icon: SiTypescript },
       { name: "JavaScript", icon: SiJavascript },
       { name: "C++", icon: SiCplusplus },
       { name: "C", icon: SiC },
       { name: "VBA", icon: VscCode },
-      { name: "Arduino", icon: SiArduino },
+      { name: "SQL", icon: VscDatabase },
     ],
   },
   {
-    category: { en: "Frontend & Mobile", ja: "フロントエンド・モバイル" },
+    category: { en: "Frontend / Backend", ja: "フロントエンド・バックエンド" },
     items: [
       { name: "React", icon: SiReact },
       { name: "Next.js", icon: SiNextdotjs },
-      { name: "Blazor", icon: SiBlazor },
-      { name: ".NET MAUI", icon: SiDotnet },
+      { name: "Blazor WebAssembly", icon: SiBlazor },
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "ASP.NET Core", icon: SiDotnet },
+      { name: "EF Core", icon: SiDotnet },
       { name: "HTML5", icon: SiHtml5 },
       { name: "CSS3", icon: SiCss3 },
       { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "SQLite", icon: VscDatabase },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "Linux / Nginx", icon: VscCode },
+      { name: "Git / GitHub", icon: SiGithub },
     ],
   },
   {
-    category: { en: "Backend & Cloud", ja: "バックエンド・クラウド" },
+    category: { en: "Learning / Exploring", ja: "学習・検証中" },
     items: [
       { name: "Microsoft Azure", icon: VscAzure },
-      { name: "ASP.NET Core", icon: SiDotnet },
-      { name: "Azure SQL", icon: VscDatabase },
-      { name: "EF Core", icon: SiDotnet },
-      { name: "Node.js", icon: SiNodedotjs },
-      { name: "App Service", icon: VscCloud },
       { name: "Docker", icon: SiDocker },
+      { name: "Go", icon: SiGo },
+      { name: ".NET Aspire", icon: SiDotnet },
     ],
   },
 ];
@@ -212,12 +222,12 @@ export const PROJECTS: Project[] = [
       "GitHub",
     ],
     description: {
-      en: "A modern SPA with a Cyberpunk-inspired UI to completely eliminate double bookings.",
-      ja: "サイバーパンク風UIを採用した、会議室の重複予約を完全に防ぐモダンSPA。",
+      en: "An internal booking system that reduced 5-6 monthly room conflicts to zero through operations design and API-side validation.",
+      ja: "運用設計とAPI側検証により、月5〜6回の会議室重複予約をゼロにした社内予約システム。",
     },
     longDescription: {
-      en: "Developed to resolve chronic double-booking conflicts with a sleek Cyberpunk-inspired UI utilizing neon glows and glassmorphism. Features strict conflict prevention, a real-time notification center, and an intuitive daily timeline. The backend is robustly built with ASP.NET Core Web API and EF Core, deployed on a Linux VPS.",
-      ja: "社内の「ダブルブッキング」課題を解決するモダンSPA。Fluent UIにグラスモーフィズムやネオン光彩を取り入れたサイバーパンク風UIを採用。予約時の重複ブロックやリアルタイム通知機能を備え、バックエンドはASP.NET Core Web APIとEF Coreで構築。Linux VPS上で運用しています。",
+      en: "Planned and developed an internal booking product for BE-AM after identifying that double bookings were caused by mixed-use calendars, unclear responsibility boundaries, and insufficient notifications. I led requirements, UI/UX, frontend, backend, DB/API design, authentication/authorization, Chatwork notifications, and post-release improvement. The system validates conflicts on the API side instead of relying only on UI warnings, and reduced 5-6 monthly conflicts to zero within two months.",
+      ja: "株式会社BE-AMで、会議室予約の重複が用途混在・責任分界の曖昧さ・通知不足から発生していると捉え、社内予約プロダクトを企画・開発しました。要件定義、UI/UX、フロントエンド、バックエンド、DB/API設計、認証・認可、Chatwork通知、リリース後改善まで担当。UIの警告だけに頼らずAPI側で重複検証を担保し、月5〜6回発生していた重複予約を導入後2か月でゼロにしました。",
     },
     links: {
       github: "https://github.com/Haru8644/MeetingRoomBooker",
@@ -227,8 +237,8 @@ export const PROJECTS: Project[] = [
       {
         src: "/images/projects/meetingroombooker-1.png",
         alt: {
-          en: "MeetingRoomBooker home screen (cyberpunk-inspired landing)",
-          ja: "MeetingRoomBooker ホーム画面（サイバーパンク風ランディング）",
+          en: "MeetingRoomBooker home screen",
+          ja: "MeetingRoomBooker ホーム画面",
         },
       },
       {
@@ -249,25 +259,128 @@ export const PROJECTS: Project[] = [
 
     highlights: [
       {
-        label: "Architecture",
+        label: "Impact",
         text: {
-          en: "Decoupled Client-Server Model with RESTful API.",
-          ja: "Blazor WebAssemblyとWeb APIによる完全分離アーキテクチャ。",
+          en: "Reduced 5-6 monthly booking conflicts to zero within two months.",
+          ja: "月5〜6回の重複予約を、導入後2か月でゼロに改善。",
         },
       },
       {
-        label: "UI / UX",
+        label: "Product Decision",
         text: {
-          en: "Cyberpunk-inspired UI using Fluent UI and custom CSS.",
-          ja: "Fluent UIとカスタムCSSによるサイバーパンク風の洗練されたUI設計。",
+          en: "Separated user roles, notifications, permissions, and exception handling instead of treating it as a UI-only issue.",
+          ja: "UI課題として終わらせず、利用者ごとの役割・通知・権限・例外運用を分解。",
         },
       },
       {
-        label: "Infrastructure",
+        label: "Engineering",
         text: {
-          en: "Reverse-proxied by Nginx and served by Kestrel; daemonized with systemd on a Linux VPS.",
-          ja: "Linux VPS上で Nginx + Kestrel を運用し、systemdで自動復旧まで担保。",
+          en: "API-side conflict validation, authorization, Chatwork notifications, and Linux VPS operation.",
+          ja: "API側重複検証、認可、Chatwork通知、Linux VPS運用まで実装。",
         },
+      },
+    ],
+
+    detailSections: [
+      {
+        title: { en: "Product Decisions", ja: "Product Decisions" },
+        items: [
+          {
+            title: {
+              en: "Dedicated system instead of extending TimeTree",
+              ja: "TimeTree改善ではなく専用システム化",
+            },
+            description: {
+              en: "Because room reservations were mixed with other schedules, I chose to build a dedicated booking flow rather than only improving the existing calendar operation.",
+              ja: "会議室予約以外の予定も混在し、空き状況や変更責任が曖昧だったため、既存運用の改善だけでなく専用システム化を選択しました。",
+            },
+          },
+          {
+            title: {
+              en: "Validate conflicts on the API side",
+              ja: "重複検証をAPI側に置く",
+            },
+            description: {
+              en: "UI warnings alone can be bypassed by timing or implementation gaps, so final conflict detection is handled by the API to protect data consistency.",
+              ja: "画面上の警告だけでは通信タイミングや実装漏れで破綻するため、最終的な重複検証はAPI側で担保しました。",
+            },
+          },
+          {
+            title: {
+              en: "Separate roles and permissions",
+              ja: "役割と権限を分ける",
+            },
+            description: {
+              en: "I separated what organizers, participants, and administrators need to know and who can update or delete reservations.",
+              ja: "予約者・参加者・管理者で必要な情報と責任範囲を分け、誰が予約を更新・削除できるかを明確にしました。",
+            },
+          },
+          {
+            title: {
+              en: "Make notifications part of the workflow",
+              ja: "通知を業務フローに組み込む",
+            },
+            description: {
+              en: "Reservation data alone does not prevent confusion, so create, update, delete, and reminder notifications are delivered through in-app and Chatwork flows.",
+              ja: "データが正しくても変更が伝わらなければ混乱は減らないため、作成・変更・削除・リマインド通知をアプリ内通知とChatwork通知に組み込みました。",
+            },
+          },
+        ],
+      },
+      {
+        title: { en: "Technical Highlights", ja: "Technical Highlights" },
+        items: [
+          {
+            title: {
+              en: "Blazor WebAssembly + ASP.NET Core Web API",
+              ja: "Blazor WebAssembly + ASP.NET Core Web API",
+            },
+            description: {
+              en: "Built a separated frontend/backend architecture with RESTful API boundaries for maintainability.",
+              ja: "フロントエンドとバックエンドを分離し、RESTful APIを境界にした保守しやすい構成にしました。",
+            },
+          },
+          {
+            title: {
+              en: "Authorization for reservation operations",
+              ja: "予約操作の認可設計",
+            },
+            description: {
+              en: "Update and delete operations are limited based on organizer/admin responsibility, not left to the UI alone.",
+              ja: "更新・削除をUI表示だけに任せず、予約者・管理者の責任範囲に応じてAPI側でも制御しました。",
+            },
+          },
+          {
+            title: {
+              en: "EF Core + SQLite for small internal operation",
+              ja: "EF Core + SQLiteによる小規模社内運用",
+            },
+            description: {
+              en: "Used EF Core and SQLite for a small internal deployment where simplicity, portability, and maintainability matter.",
+              ja: "小規模な社内運用に合わせ、シンプルさ・移植性・保守性を重視してEF CoreとSQLiteを採用しました。",
+            },
+          },
+          {
+            title: {
+              en: "Chatwork API notifications and reminders",
+              ja: "Chatwork API通知とリマインド",
+            },
+            description: {
+              en: "Integrated Chatwork notifications for reservation creation, changes, deletion, and reminders so updates reach participants outside the app.",
+              ja: "予約作成・変更・削除・リマインドをChatwork通知に連携し、アプリ外でも関係者に変更が届くようにしました。",
+            },
+          },
+          {
+            title: {
+              en: "Linux VPS operation with Nginx and systemd",
+              ja: "Nginx / systemd を用いたLinux VPS運用",
+            },
+            description: {
+              en: "Operated the system on a Linux VPS using Nginx and systemd, considering small-scale internal reliability and maintainability.",
+              ja: "Linux VPS上でNginxとsystemdを用いて運用し、小規模社内システムとしての安定性と保守性を意識しました。",
+            },
+          },
+        ],
       },
     ],
   },

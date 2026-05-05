@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { X, Github, ArrowUpRight } from "lucide-react";
 
@@ -15,6 +16,23 @@ interface ProjectModalProps {
 export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
   const { lang } = useLanguage();
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -22,6 +40,9 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
       exit={{ opacity: 0 }}
       className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/65 p-4 backdrop-blur-md"
       onClick={onClose}
+      aria-modal="true"
+      role="dialog"
+      aria-labelledby="project-modal-title"
     >
       <motion.div
         initial={{ scale: 0.97, opacity: 0 }}
@@ -35,7 +56,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
           type="button"
           onClick={onClose}
           className="absolute right-4 top-4 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/70 bg-white/80 text-slate-600 transition hover:text-slate-900"
-          aria-label={lang === "en" ? "Close" : "閉じる"}
+          aria-label={lang === "en" ? "Close project details" : "プロジェクト詳細を閉じる"}
         >
           <X className="h-5 w-5" />
         </button>
@@ -43,7 +64,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
         <div className="p-5 md:p-8 lg:p-10">
           <div className="mb-8 flex flex-col gap-4 pr-14 md:flex-row md:items-start md:justify-between">
             <div>
-              <h2 className="text-3xl font-black tracking-tight text-slate-900 md:text-4xl">
+              <h2 id="project-modal-title" className="text-3xl font-black tracking-tight text-slate-900 md:text-4xl">
                 {project.title[lang]}
               </h2>
               <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600 md:text-base">
@@ -71,6 +92,36 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
               </div>
             ))}
           </div>
+
+          {project.detailSections && project.detailSections.length > 0 && (
+            <div className="mt-8 grid gap-6">
+              {project.detailSections.map((section) => (
+                <section
+                  key={`${project.title.en}-${section.title.en}`}
+                  className="rounded-[1.5rem] border border-white/80 bg-white/70 p-5 shadow-[0_12px_32px_-24px_rgba(15,23,42,0.28)] md:p-6"
+                >
+                  <h3 className="text-lg font-bold tracking-tight text-slate-900">
+                    {section.title[lang]}
+                  </h3>
+                  <div className="mt-4 grid gap-4 md:grid-cols-2">
+                    {section.items.map((item) => (
+                      <div
+                        key={`${section.title.en}-${item.title.en}`}
+                        className="rounded-[1.25rem] border border-slate-200/80 bg-white/80 p-4"
+                      >
+                        <h4 className="text-sm font-bold tracking-tight text-slate-900">
+                          {item.title[lang]}
+                        </h4>
+                        <p className="mt-2 text-sm leading-7 text-slate-600">
+                          {item.description[lang]}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+          )}
 
           <div className="mt-8 flex flex-wrap gap-2">
             {project.tags.map((tag) => (

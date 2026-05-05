@@ -44,6 +44,15 @@ export const Projects = () => {
                 transition={{ delay: index * 0.08 }}
                 className="interactive-card glow-ring glass-panel group cursor-pointer overflow-hidden rounded-[2rem]"
                 onClick={() => setSelectedProject(project)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    setSelectedProject(project);
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                aria-label={`${lang === "en" ? "Open project details for" : "プロジェクト詳細を開く"} ${project.title[lang]}`}
               >
                 <div className="p-5 md:p-6">
                   <div className="relative overflow-hidden rounded-[1.5rem] border border-white/80 bg-slate-950 shadow-[0_20px_50px_-28px_rgba(15,23,42,0.5)]">
