@@ -26,7 +26,7 @@ export const Hero = () => {
           <div className="relative z-10">
             <div className="mb-6 flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-semibold text-sky-700">
-                {PROFILE.university[lang]}
+                {PROFILE.university[lang]} / {PROFILE.title[lang]}
               </span>
             </div>
 
@@ -35,15 +35,15 @@ export const Hero = () => {
                 <h1 className="max-w-4xl text-4xl font-black leading-[1.08] tracking-tight text-slate-900 md:text-6xl xl:text-7xl">
                   {lang === "ja" ? (
                     <>
-                      <span className="block">曖昧な課題を、</span>
-                      <span className="block text-gradient-azure">使われ続ける仕組みへ</span>
-                      <span className="block">実装で落とし込む。</span>
+                      <span className="block">使いたいときに、</span>
+                      <span className="block text-gradient-azure"><span className="inline-block">迷わず目的を</span><span className="inline-block">果たせる</span></span>
+                      <span className="block">体験をつくる。</span>
                     </>
                   ) : (
                     <>
-                      <span className="block">Frame product problems.</span>
-                      <span className="block text-gradient-azure">Build systems</span>
-                      <span className="block">teams keep using.</span>
+                      <span className="block">Make it easier</span>
+                      <span className="block text-gradient-azure">for people to do</span>
+                      <span className="block">what they came to do.</span>
                     </>
                   )}
                 </h1>
@@ -91,13 +91,13 @@ export const Hero = () => {
             </p>
             <p className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
               {lang === "en"
-                ? "Structure the problem, then carry it through implementation"
-                : "課題を構造化し、実装までやり切る"}
+                ? "Trace user journeys and make choices tangible"
+                : "利用者の行動から課題を捉え、選択肢を形にする"}
             </p>
             <p className="mt-3 text-sm leading-7 text-slate-600">
               {lang === "en"
-                ? "I value not only building features, but also clarifying responsibilities, notifications, and operational rules so a system remains usable in practice."
-                : "機能を作るだけでなく、責任分界・通知・権限・運用ルールまで整理し、現場で使われる仕組みに落とし込むことを重視しています。"}
+                ? "At Merpay, I developed proposals from data and specification research. For internal software, I also work through implementation and operation, learning from feedback on how people use it."
+                : "メルペイではデータや仕様の調査から改善企画を具体化し、社内システムでは実装・運用も担当。利用者が目的を果たすまでの行動と負担に着目しています。"}
             </p>
           </div>
 
@@ -108,8 +108,8 @@ export const Hero = () => {
               </p>
               <p className="mt-3 text-lg font-bold text-slate-900">
                 {lang === "en"
-                  ? "Product-minded Engineering"
-                  : "Product-minded Engineering"}
+                  ? "Aspiring Product Manager"
+                  : "PdM志望 / 2028年卒"}
               </p>
             </div>
             <div className="interactive-card glass-panel rounded-[1.75rem] p-6">
@@ -118,8 +118,8 @@ export const Hero = () => {
               </p>
               <p className="mt-3 text-lg font-bold text-slate-900">
                 {lang === "en"
-                  ? "User behavior and operational adoption"
-                  : "ユーザー行動と運用定着"}
+                  ? "Goal completion and user effort"
+                  : "目的の達成と対処の負担"}
               </p>
             </div>
           </div>

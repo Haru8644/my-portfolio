@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 300" fill="none">
+  <defs>
+    <linearGradient id="wash" x1="100" y1="35" x2="270" y2="280" gradientUnits="userSpaceOnUse"><stop stop-color="#cbf7ef"/><stop offset="1" stop-color="#a6ebed"/></linearGradient>
+    <linearGradient id="paper" x1="140" y1="65" x2="290" y2="280" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#e4fbfa"/></linearGradient>
+    <filter id="shadow" x="-35%" y="-35%" width="180%" height="190%"><feDropShadow dx="0" dy="10" stdDeviation="11" flood-color="#2ba4b2" flood-opacity=".12"/></filter>
+  </defs>
+  <circle cx="171" cy="135" r="79" fill="url(#wash)" opacity=".8"/>
+  <path d="M282 64c66 17 37 71-31 78S58 134 68 197s145 65 198 21" stroke="#65bfd0" stroke-width="1.7" stroke-dasharray="4 4"/>
+  <g transform="rotate(4 247 88)" filter="url(#shadow)">
+    <rect x="186" y="38" width="121" height="73" rx="13" fill="#c4eff7"/>
+    <path d="m284 102 13 21-32-15" fill="#c4eff7"/>
+    <rect x="197" y="48" width="100" height="51" rx="7" fill="url(#paper)"/>
+    <path d="M210 65h64m-64 14h41" stroke="#a6dced" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <g transform="rotate(4 187 139)" filter="url(#shadow)">
+    <rect x="109" y="111" width="176" height="75" rx="14" fill="url(#paper)" stroke="#fff"/>
+    <path d="m119 177-9 16 29-12" fill="#f3fdfc"/>
+    <circle cx="137" cy="144" r="18" fill="#a6d9f0"/><circle cx="137" cy="139" r="7" fill="#fff"/><path d="M125 157c1-13 23-13 24 0" fill="#fff"/>
+    <path d="M166 136h87m-87 16h65" stroke="#b8daeb" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <g transform="rotate(5 233 220)" filter="url(#shadow)">
+    <rect x="170" y="174" width="136" height="109" rx="14" fill="url(#wash)" stroke="#a9e7e8"/>
+    <rect x="181" y="183" width="114" height="88" rx="8" fill="url(#paper)"/>
+    <g fill="#48bac5"><rect x="194" y="194" width="17" height="17" rx="4"/><rect x="194" y="218" width="17" height="17" rx="4"/><rect x="194" y="242" width="17" height="17" rx="4"/></g>
+    <g stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m198 202 3 3 6-7m-9 28 3 3 6-7m-9 28 3 3 6-7"/></g>
+    <path d="M222 202h54m-54 24h47m-47 24h52" stroke="#b6dbeb" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg>

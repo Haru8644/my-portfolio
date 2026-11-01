@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { X, Github, ArrowUpRight } from "lucide-react";
 
@@ -15,11 +15,30 @@ interface ProjectModalProps {
 
 export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
   const { lang } = useLanguage();
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
+    const previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    closeRef.current?.focus({ preventScroll: true });
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (dialogRef.current?.querySelector('[role="dialog"]')) return;
       if (event.key === "Escape") {
+        event.preventDefault();
         onClose();
+      }
+      if (event.key === "Tab") {
+        const focusable = Array.from(dialogRef.current?.querySelectorAll<HTMLElement>('a[href], button, [tabindex="0"]') ?? [])
+          .filter(element => element.getClientRects().length > 0);
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
       }
     };
 
@@ -30,11 +49,13 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
     return () => {
       document.body.style.overflow = originalOverflow;
       window.removeEventListener("keydown", handleKeyDown);
+      previousFocus?.focus({ preventScroll: true });
     };
   }, [onClose]);
 
   return (
     <motion.div
+      ref={dialogRef}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -53,6 +74,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
         onClick={(event) => event.stopPropagation()}
       >
         <button
+          ref={closeRef}
           type="button"
           onClick={onClose}
           className="absolute right-4 top-4 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/70 bg-white/80 text-slate-600 transition hover:text-slate-900"
@@ -112,7 +134,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                         <h4 className="text-sm font-bold tracking-tight text-slate-900">
                           {item.title[lang]}
                         </h4>
-                        <p className="mt-2 text-sm leading-7 text-slate-600">
+                        <p className="mt-2 whitespace-pre-line text-sm leading-7 text-slate-600">
                           {item.description[lang]}
                         </p>
                       </div>

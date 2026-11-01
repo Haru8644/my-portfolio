@@ -6,7 +6,7 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-Utility_First-06B6D4?logo=tailwindcss&logoColor=white)
 ![Azure Deploy](https://img.shields.io/badge/Deploy-Azure_Static_Web_Apps-0078D4?logo=microsoftazure)
 
-This is my personal engineering portfolio, built to present my work, technical interests, and product development experience.
+This is my bilingual portfolio for Class of 2028 product management and product planning graduate applications, built to present my product thinking, technical interests, and development experience.
 
 The portfolio focuses on projects where I did not only implement features, but also identified operational issues, designed requirements, built full-stack systems, and improved them until they were actually used in practice.
 
@@ -17,7 +17,7 @@ The portfolio focuses on projects where I did not only implement features, but a
 
 ## About This Portfolio
 
-This portfolio is designed for internship and software engineering opportunities, especially in product-oriented engineering environments.
+This portfolio presents my experience as an aspiring product manager, including a product management internship and internal software development and operation.
 
 It highlights my interest in building systems that connect:
 
@@ -27,8 +27,8 @@ It highlights my interest in building systems that connect:
 - Operational design
 - Continuous improvement after release
 
-The main case study is **MeetingRoomBooker**, an internal meeting room reservation system developed through my part-time work at BE-AM.  
-The project is presented not only as an application, but as an example of how I approach real operational problems from requirement definition to implementation and improvement.
+The existing Projects cards and modals present **Merpay**, **MeetingRoomBooker**, **Howtelevision scout UX**, and **Speee**, in that order, followed by other projects. The original layout, navigation, carousel, visual styling, and responsive behavior are retained.
+Merpay's central payment-failure project reached a prototype and final proposal; separate supporting improvements were released. MeetingRoomBooker is in internal use. Scout UX remains at problem hypotheses and research preparation, focused on participation after scout acceptance. Speee was a three-day team planning exercise, without a live release or measured customer impact. Entria remains at design stage.
 
 ## Featured Case Study
 
@@ -41,7 +41,8 @@ I designed and implemented features such as duplicate booking prevention, organi
 
 Key points:
 
-- Reduced duplicate reservations by introducing system-side validation
+- Helped employees spot overlaps and coordinate early, eliminating unexpected clashes first discovered on the meeting day; this does not mean every overlap disappeared
+- Described current API-side room validation separately from the observed operational outcome
 - Clarified reservation ownership and participant roles
 - Added API-side authorization for update and delete operations
 - Integrated Chatwork notifications into the daily workflow
@@ -92,6 +93,7 @@ src
 │   └── LanguageContext.tsx
 └── data
     ├── constants.ts
+    ├── additionalProjects.ts
     └── types.ts
 ```
 
@@ -100,7 +102,7 @@ The project separates UI components, application state, and content data so that
 ## Development
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -109,9 +111,8 @@ The development server runs locally with hot reload, which allows me to iterate 
 ## Quality Checks
 
 ```bash
-npm run lint
-npm run typecheck
-npm run build
+npm run check
+git diff --check
 ```
 
 I use these checks as a personal baseline before updating the deployed portfolio.  
@@ -120,6 +121,10 @@ The goal is not only to make the site look polished, but also to keep the codeba
 - `lint` checks for framework and style issues.
 - `typecheck` catches TypeScript errors without generating build artifacts.
 - `build` verifies that the application can be compiled for production.
+
+For a local preview of the static export, run `npm run build` and then `npm run preview`. Open the printed URL (normally `http://127.0.0.1:4173`) and stop with `Ctrl+C`. `next start` does not serve this static export. The existing Google Fonts setup requires network access during a build without cached fonts.
+
+The Azure workflow still deploys `out/` when `main` is updated. A feature-branch push alone does not update production.
 
 ## Technical Decisions
 
@@ -139,14 +144,14 @@ The project is structured so that UI components, data definitions, and applicati
 For example, language switching is handled through React Context instead of being embedded directly inside each component.  
 This keeps the UI components focused on presentation and makes it easier to maintain both Japanese and English content without duplicating logic.
 
-The main content is also organized as typed data, which makes it easier to update project descriptions, skills, and experience sections consistently.
+The main content is organized as typed data. Additional projects use the existing Project model, with optional stage and role text and a few additional status values. Project detail sections remain inside the existing modal; there are no separate case routes. Language preference is restored after a matching server snapshot and remains usable in memory when storage is unavailable.
 
 ### Case Study Presentation
 
 The portfolio is designed to make project backgrounds and decision-making easy to understand.
 
 For MeetingRoomBooker, I added sections such as Product Decisions and Technical Highlights so that readers can understand both the product thinking and the engineering implementation behind the project.  
-This is especially important because the project was not only about building screens, but also about improving an internal workflow through rules, roles, validation, and notifications.
+This connects product decisions with implementation and operation. Merpay proposal work, released supporting improvements, and unvalidated scout UX hypotheses are explicitly distinguished. Internal company materials, confidential metrics, and unpublished screens are not included. MeetingRoomBooker schedule and form screenshots use the demo images in its public README.
 
 ## Roadmap
 

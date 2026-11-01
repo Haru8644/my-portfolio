@@ -31,8 +31,8 @@ export const Showcase = () => {
                 </h2>
                 <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600 md:text-base">
                   {lang === "en"
-                    ? "Framed like a polished product demo instead of a flat image dump. Hover to pause, use the arrows, and open individual shots in the lightbox."
-                    : "平置きの画像一覧ではなく、プロダクトデモとして見せる構成に調整。ホバーで停止、矢印で移動、ライトボックスで拡大できます。"}
+                    ? "Screens from my software projects. Hover to pause, use the arrows, and open individual shots in the lightbox. MeetingRoomBooker schedule and form screens use demo data from its public README."
+                    : "開発したプロダクトの画面です。ホバーで停止、矢印で移動、ライトボックスで拡大できます。会議室のカレンダー・予約フォームは、公開READMEのデモデータの画面です。"}
                 </p>
               </div>
 

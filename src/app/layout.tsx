@@ -11,7 +11,7 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 const siteDescription =
-  "Product-minded engineering portfolio by Haruki Ino: problem framing, full-stack implementation, and operational adoption through real internal products.";
+  "Haruki Ino: Class of 2028 aspiring product manager. Product management internship at Merpay, internal software planning and operation, scout UX research preparation, and team SaaS planning.";
 
 export const metadata: Metadata = {
   title: {
@@ -20,7 +20,9 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   keywords: [
-    "Product-minded Engineering",
+    "Aspiring Product Manager",
+    "Class of 2028",
+    "Product Planning",
     "Full-stack Development",
     "Product Case Study",
     "C#",
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "Haruki Ino Portfolio",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Haruki Ino - Portfolio",
     description: siteDescription,
   },
