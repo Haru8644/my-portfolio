@@ -43,8 +43,17 @@ export interface ProjectImage {
 }
 
 export interface Project {
+  id?: "merpay" | "meetingroombooker" | "howtelevision" | "speee";
   title: LocalizedString;
-  status: "In Development" | "Production Used";
+  status:
+    | "In Development"
+    | "Production Used"
+    | "Proposal & Prototype"
+    | "Research Preparation"
+    | "Team Proposal"
+    | "Design Stage";
+  stage?: LocalizedString;
+  role?: LocalizedString;
   tags: string[];
   description: LocalizedString;
   longDescription: LocalizedString;

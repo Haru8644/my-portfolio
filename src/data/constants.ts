@@ -1,4 +1,10 @@
 import {
+  MERPAY_PROJECT,
+  HOWTELEVISION_PROJECT,
+  SPEEE_PROJECT,
+  ENTRIA_PROJECT,
+} from "./additionalProjects";
+import {
   Profile,
   Project,
   SkillCategory,
@@ -24,35 +30,34 @@ import {
   SiPostgresql,
   SiGo,
 } from "react-icons/si";
-import {
-  VscAzure,
-  VscCode,
-  VscDatabase,
-} from "react-icons/vsc";
+import { VscAzure, VscCode, VscDatabase } from "react-icons/vsc";
 import { TbTrophy } from "react-icons/tb";
 
 export const PROFILE: Profile = {
-  name: { en: "Haruki Ino", ja: "稲生 遥希" },
-  title: { en: "", ja: "" },
-  university: { en: "Tokyo University of Science", ja: "東京理科大学" },
+  name: {
+    en: "Haruki Ino",
+    ja: "稲生 遥希",
+  },
+  title: {
+    ja: "2028年卒 · PdM志望",
+    en: "Class of 2028 · Aspiring Product Manager",
+  },
+  university: {
+    en: "Tokyo University of Science",
+    ja: "東京理科大学",
+  },
   department: {
     en: "Dept. of Physical Engineering / Class of 2028",
     ja: "先進工学部 物理工学科 / 2028年卒",
   },
-
   catchphrase: {
-    en: "TURN AMBIGUOUS PRODUCT PROBLEMS INTO SYSTEMS THAT TEAMS CAN KEEP USING.",
-    ja: "曖昧な課題を、現場で使われ続ける仕組みに落とし込む。",
+    ja: "使いたいときに、迷わず目的を果たせる体験をつくる。",
+    en: "Make it easier for people to do what they came to do.",
   },
   description: {
-    en:
-      "I connect product thinking with full-stack implementation. My focus is not only shipping features, but also clarifying user behavior, responsibilities, notifications, permissions, and operational rules so the product keeps creating value after release.\n\n" +
-      "In MeetingRoomBooker, I led requirements, UI/UX, API/DB design, authentication, notifications, and post-release improvement, reducing 5-6 monthly booking conflicts to zero within two months.",
-    ja:
-      "プロダクト視点とフルスタック実装を接続し、機能を作るだけでなく、ユーザー行動・責任分界・通知・権限・運用ルールまで整理して、リリース後も価値が続く仕組みを設計します。\n\n" +
-      "MeetingRoomBookerでは、要件定義、UI/UX、API/DB、認証・認可、通知、リリース後改善まで担当し、月5〜6回発生していた重複予約を導入後2か月でゼロにしました。",
+    ja: "メルペイのPdMインターンと、社内システムの企画・開発・運用を経験しました。利用者の行動をたどって課題を捉え、データや現場の声をもとに、何をどう変えるかを考えています。",
+    en: "My experience includes a product management internship at Merpay and planning, building, and operating internal software. I trace user journeys and use data and feedback to understand problems and decide what to change.",
   },
-
   socials: {
     email: "mailto:haru.dev8644@gmail.com",
   },
@@ -68,7 +73,7 @@ export const ACCOUNTS: Account[] = [
   },
   {
     platform: "AtCoder",
-    username: "Haru44 (Cyan)",
+    username: "Haru44",
     url: "https://atcoder.jp/users/Haru44",
     icon: TbTrophy,
     color: "hover:text-[#00C0C0]",
@@ -85,7 +90,10 @@ export const ACCOUNTS: Account[] = [
 export const EDUCATION: TimelineItem[] = [
   {
     period: "2024 - Present",
-    title: { en: "Bachelor of Engineering", ja: "学士（工学）" },
+    title: {
+      ja: "学士（工学）取得見込み · 2028年3月",
+      en: "B.Eng. expected March 2028",
+    },
     organization: {
       en: "Tokyo University of Science",
       ja: "東京理科大学 先進工学部 物理工学科",
@@ -99,33 +107,63 @@ export const EDUCATION: TimelineItem[] = [
 
 export const EXPERIENCE: TimelineItem[] = [
   {
+    period: "2026.07 - 2026.10",
+    title: {
+      ja: "PdMインターン",
+      en: "Product Manager Intern",
+    },
+    organization: {
+      ja: "株式会社メルペイ",
+      en: "Merpay, Inc.",
+    },
+    description: {
+      ja: "メルカードの利用体験を対象に、データ分析・仕様調査・関係者へのヒアリングを通じて改善に取り組みました。決済エラー企画はプロトタイプ・最終提案まで。カード発行状況への導線と問い合わせ起点の支払い体験改善では、関係者と協働してリリースまで関わりました。",
+      en: "Worked on Mercard through data analysis, specification research, and stakeholder discussions. The payment-failure project reached a prototype and final proposal. Separately contributed through release to card-issuance status navigation and inquiry-led payment experience improvements.",
+    },
+  },
+  {
     period: "2026.02 - Present",
     title: {
-      en: "Marketing Operations / Growth Initiatives",
-      ja: "マーケティング施策運用 / グロース施策",
+      ja: "toCマーケティング・分析 / スカウトUX改善",
+      en: "Consumer Marketing & Analysis / Scout UX Improvement",
     },
     organization: {
       en: "Howtelevision, Inc.",
       ja: "株式会社ハウテレビジョン",
     },
     description: {
-      en: "Involved in marketing initiatives for 'GaishiShukatsu', where I help improve outreach quality through a fast hypothesis–execution–review cycle. I analyze user response data such as open and click-through rates, organize which messages resonate with which audience segments, and connect those findings to the next action. Rather than just sending campaigns, I focus on understanding user behavior and improving the relevance of each communication.",
-      ja: "『外資就活ドットコム』のマーケティング施策運用に取り組んでいます。開封率・クリック率などの行動データをもとに、どのユーザー層にどの訴求が反応されたのかを整理し、次回施策の仮説につなげています。単に配信を回すのではなく、ユーザーがどの情報で興味を持ち、どこで反応し、次にどう動くのかを捉えながら、仮説立案→実行→振り返りのサイクルを高速で回し、施策精度の向上に貢献しています。",
+      en: "Involved in marketing initiatives for 'GaishiShukatsu', where I help improve outreach quality through a fast hypothesis–execution–review cycle. I analyze user response data such as open and click-through rates, organize which messages resonate with which audience segments, and connect those findings to the next action. Rather than just sending campaigns, I focus on understanding user behavior and improving the relevance of each communication.\n\nSince October 2026, I have also contributed to a separate scout UX project focused on selection participation after scout acceptance. This work is currently at the problem-hypothesis, comparative-research, and research-preparation stage; data analysis and interviews are planned next.",
+      ja: "『外資就活ドットコム』のマーケティング施策運用に取り組んでいます。開封率・クリック率などの行動データをもとに、どのユーザー層にどの訴求が反応されたのかを整理し、次回施策の仮説につなげています。単に配信を回すのではなく、ユーザーがどの情報で興味を持ち、どこで反応し、次にどう動くのかを捉えながら、仮説立案→実行→振り返りのサイクルを高速で回し、施策精度の向上に貢献しています。\n\n2026年10月からは、別の取り組みとしてスカウト承諾後の選考参加率を高めるUX改善PJに参加。現在は課題仮説の整理・競合比較・調査準備の段階で、データ分析とインタビューによる検証は今後行う予定です。",
     },
   },
   {
     period: "2024.09 - Present",
     title: {
-      en: "Internal Systems Development / Operations Improvement",
-      ja: "社内システム開発 / 業務改善",
+      ja: "社内システム開発 / 業務改善（アルバイト）",
+      en: "Internal Systems Development / Operations Improvement (Part-time)",
     },
     organization: {
       en: "BE-AM Co., Ltd.",
       ja: "株式会社BE-AM",
     },
     description: {
-      en: "Engaged in internal systems development and operational improvement from problem discovery and requirements definition to infrastructure setup, implementation, and post-release refinement. Worked on planning and developing a conference-room booking system to resolve scheduling conflicts, building and operating an SFTP server with clearly designed permission management, automating internal workflows with VBA, and supporting requirements definition and UI/UX design for a tablet-based reception system. Focused not only on implementation, but also on real-world adoption and continuous improvement based on on-site feedback.",
-      ja: "社内課題の発見から要件定義、インフラ構築、実装、リリース後の改善まで一貫して取り組んでいます。予約バッティングの解消を目的とした会議室予約システムの企画・開発、権限設計を含むSFTPサーバーの構築・運用、VBAによる社内業務の自動化、タブレット受付システムの要件定義・UI/UX設計などを担当してきました。実装だけでなく、現場で実際に使われることを前提に、運用定着と継続的な改善まで意識して進めています。",
+      en: "Engaged in internal systems development and operational improvement from problem discovery and requirements definition to infrastructure setup, implementation, and post-release refinement. Worked on planning and developing a conference-room booking system to resolve scheduling conflicts, building and operating an SFTP server with clearly designed permission management, automating internal workflows with VBA, and supporting requirements definition and UI/UX design for a tablet-based reception system. Focused not only on implementation, but also on real-world adoption and continuous improvement based on on-site feedback. The Entria reception app remains at the design stage, without implementation or internal rollout.",
+      ja: "社内課題の発見から要件定義、インフラ構築、実装、リリース後の改善まで一貫して取り組んでいます。予約バッティングの解消を目的とした会議室予約システムの企画・開発、権限設計を含むSFTPサーバーの構築・運用、VBAによる社内業務の自動化、タブレット受付システムの要件定義・UI/UX設計などを担当してきました。実装だけでなく、現場で実際に使われることを前提に、運用定着と継続的な改善まで意識して進めています。 受付アプリEntriaは設計段階であり、実装・社内導入は行っていません。",
+    },
+  },
+  {
+    period: "2026.09 / 3 days",
+    title: {
+      ja: "3days Engineer Internship / チーム企画",
+      en: "3days Engineer Internship / Team Product Planning",
+    },
+    organization: {
+      ja: "株式会社Speee",
+      en: "Speee, Inc.",
+    },
+    description: {
+      ja: "不動産会社向けSaaSを題材に、チームで提供価値と開発計画を検討しました。査定書を作る効率だけでなく、売主が結果に納得して相談や訪問査定へ進めるかに着目し、MVPの範囲と検証する指標を整理しました。",
+      en: "Worked with a team to define the value and development plan for a SaaS product serving real estate agencies. We looked beyond document-production efficiency to how sellers could understand a valuation and choose their next step, then defined an MVP scope and measures for validation.",
     },
   },
   {
@@ -203,8 +241,13 @@ export const SKILLS: SkillCategory[] = [
 ];
 
 export const PROJECTS: Project[] = [
+  MERPAY_PROJECT,
   {
-    title: { en: "MeetingRoomBooker", ja: "MeetingRoomBooker" },
+    title: {
+      en: "MeetingRoomBooker",
+      ja: "MeetingRoomBooker",
+    },
+    id: "meetingroombooker",
     status: "Production Used",
     tags: [
       "Blazor WebAssembly",
@@ -222,17 +265,16 @@ export const PROJECTS: Project[] = [
       "GitHub",
     ],
     description: {
-      en: "An internal booking system that reduced 5-6 monthly room conflicts to zero through operations design and API-side validation.",
-      ja: "運用設計とAPI側検証により、月5〜6回の会議室重複予約をゼロにした社内予約システム。",
+      ja: "社員約30名が使う会議室予約システムを自ら提案し、開発から運用改善まで担当しました。予定を見渡せる表示と日常的に使う社内チャットへの通知を整え、当日初めて発覚するバッティングの解消につなげました。",
+      en: "Proposed, built, and operated an internal room-booking system used by about 30 employees. A clearer schedule view and notifications through the team's everyday chat helped surface conflicts early, eliminating unexpected room clashes first discovered on the day.",
     },
     longDescription: {
-      en: "Planned and developed an internal booking product for BE-AM after identifying that double bookings were caused by mixed-use calendars, unclear responsibility boundaries, and insufficient notifications. I led requirements, UI/UX, frontend, backend, DB/API design, authentication/authorization, Chatwork notifications, and post-release improvement. The system validates conflicts on the API side instead of relying only on UI warnings, and reduced 5-6 monthly conflicts to zero within two months.",
-      ja: "株式会社BE-AMで、会議室予約の重複が用途混在・責任分界の曖昧さ・通知不足から発生していると捉え、社内予約プロダクトを企画・開発しました。要件定義、UI/UX、フロントエンド、バックエンド、DB/API設計、認証・認可、Chatwork通知、リリース後改善まで担当。UIの警告だけに頼らずAPI側で重複検証を担保し、月5〜6回発生していた重複予約を導入後2か月でゼロにしました。",
+      ja: "社員約30名が使う会議室予約システムを自ら提案し、開発から運用改善まで担当しました。予定を見渡せる表示と日常的に使う社内チャットへの通知を整え、当日初めて発覚するバッティングの解消につなげました。 課題整理、要件定義、UI/UX、実装、インフラ、導入・運用改善まで担当しました。現在のAPIによる同室重複の検証と、当時観察した運用上の成果は区別しています。",
+      en: "Proposed, built, and operated an internal room-booking system used by about 30 employees. A clearer schedule view and notifications through the team's everyday chat helped surface conflicts early, eliminating unexpected room clashes first discovered on the day. My work covered requirements, UI/UX, implementation, infrastructure, rollout, and iteration. Current API-side room validation is described separately from the operational outcome observed at the time.",
     },
     links: {
       github: "https://github.com/Haru8644/MeetingRoomBooker",
     },
-
     images: [
       {
         src: "/images/projects/meetingroombooker-1.png",
@@ -242,27 +284,26 @@ export const PROJECTS: Project[] = [
         },
       },
       {
-        src: "/images/projects/meetingroombooker-2.png",
+        src: "/images/projects/meetingroombooker-demo-schedule.png",
         alt: {
-          en: "MeetingRoomBooker calendar view (daily timeline)",
-          ja: "MeetingRoomBooker カレンダー画面（日次タイムライン）",
+          ja: "MeetingRoomBooker カレンダー画面（公開READMEのデモデータ）",
+          en: "MeetingRoomBooker calendar view (demo data from the public README)",
         },
       },
       {
-        src: "/images/projects/meetingroombooker-3.png",
+        src: "/images/projects/meetingroombooker-demo-form.png",
         alt: {
-          en: "MeetingRoomBooker new reservation form",
-          ja: "MeetingRoomBooker 新規予約フォーム",
+          ja: "MeetingRoomBooker 予約フォーム（公開READMEのデモデータ）",
+          en: "MeetingRoomBooker reservation form (demo data from the public README)",
         },
       },
     ],
-
     highlights: [
       {
         label: "Impact",
         text: {
-          en: "Reduced 5-6 monthly booking conflicts to zero within two months.",
-          ja: "月5〜6回の重複予約を、導入後2か月でゼロに改善。",
+          ja: "重なりを事前に把握・調整し、当日初めて発覚する想定外のバッティングを解消。",
+          en: "Earlier awareness and coordination eliminated unexpected room clashes first discovered on the day.",
         },
       },
       {
@@ -280,10 +321,60 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-
     detailSections: [
       {
-        title: { en: "Product Decisions", ja: "Product Decisions" },
+        title: {
+          ja: "背景・導入・運用の振り返り",
+          en: "Background, rollout & operation",
+        },
+        items: [
+          {
+            title: {
+              ja: "予定があっても、空き状況が分からない",
+              en: "A calendar that did not make availability clear",
+            },
+            description: {
+              ja: "会議室の予約と社員の予定などが同じカレンダーに混在し、空き状況や予定の重なりを把握しにくい状態でした。月5〜6回ほどバッティングが起きていたという記録があり、会議当日に調整へ追われる負担がありました。\n\n予約画面を用意するだけでなく、重なりを事前に把握し、関係者が調整できる状態を目指して専用システムを提案しました。",
+              en: "Room bookings and employee schedules were mixed in one calendar, making availability and overlaps difficult to see. Records described roughly five to six clashes per month, creating the burden of coordinating on the day of a meeting.\n\nI proposed a dedicated system with a goal beyond providing a booking screen: helping people notice overlaps early and coordinate with those involved.",
+            },
+          },
+          {
+            title: {
+              ja: "試作品を使いながら、現場と要件を詰める",
+              en: "Refine requirements with a working prototype",
+            },
+            description: {
+              ja: "現場で話を聞いて要件を整理し、約1週間で試作品を開発しました。これは試作品までの期間であり、導入・運用を含む全工程を1週間で終えたという意味ではありません。\n\n幹部への実演と改善を約5回繰り返し、予定の見え方や操作を調整しました。導入後も週1回の聞き取りを行い、実際の使い方に合わせて継続的に改善しました。",
+              en: "I gathered requirements through conversations at the workplace and built a prototype in about a week. That period covered the prototype, not the full development, rollout, and operation cycle.\n\nI repeated demonstrations to management and refinements about five times, adjusting schedule visibility and interactions. After rollout, weekly feedback sessions supported continued improvements around actual usage.",
+            },
+          },
+          {
+            title: {
+              ja: "見渡せる表示と、いつもの場所に届く通知",
+              en: "Visibility and notifications in an everyday workflow",
+            },
+            description: {
+              ja: "タイムライン表示で予定を見渡せるようにし、Chatwork通知で日常的に使う社内チャットへ変更を届ける構成にしました。アプリを自分で何度も確認するだけに頼らず、重なりや変更に気づくきっかけを業務の中に置きました。",
+              en: "A timeline made schedules easier to scan, while Chatwork notifications delivered changes through the team's everyday chat. This put opportunities to notice overlaps and changes into the workflow, reducing reliance on repeatedly checking the app.",
+            },
+          },
+          {
+            title: {
+              ja: "確認できたのは、当日初めて発覚する重なりの解消",
+              en: "The observed outcome: fewer surprises on the day",
+            },
+            description: {
+              ja: "予定の重なりを事前に把握して調整できるようになり、当日初めて発覚する想定外のバッティングがなくなりました。成果は『すべての重複そのものがなくなった』ことではなく、気づくタイミングと調整できる運用が変わったことです。\n\n社内運用を続ける中で、実装だけではなく、使われ方を聞き、通知や運用を調整し続けることの大切さを学びました。",
+              en: "People could identify overlaps and coordinate in advance, eliminating unexpected clashes first discovered on the day. This describes a change in awareness and coordination, rather than the elimination of every scheduling overlap.\n\nContinuing to operate the system taught me the importance of listening to how it is used and adjusting notifications and routines after implementation.",
+            },
+          },
+        ],
+      },
+      {
+        title: {
+          en: "Product Decisions",
+          ja: "Product Decisions",
+        },
         items: [
           {
             title: {
@@ -301,8 +392,8 @@ export const PROJECTS: Project[] = [
               ja: "重複検証をAPI側に置く",
             },
             description: {
-              en: "UI warnings alone can be bypassed by timing or implementation gaps, so final conflict detection is handled by the API to protect data consistency.",
-              ja: "画面上の警告だけでは通信タイミングや実装漏れで破綻するため、最終的な重複検証はAPI側で担保しました。",
+              ja: "現在の実装では、同じ会議室の重複予約をAPI側で検証し、参加者の予定の重なりは警告として扱います。この機能上の区別と、当時観察した業務上の成果は別のものです。",
+              en: "In the current implementation, the API validates overlapping bookings for the same room, while participant schedule overlaps are warnings. These rules are separate from the operational outcome observed at the time.",
             },
           },
           {
@@ -328,7 +419,10 @@ export const PROJECTS: Project[] = [
         ],
       },
       {
-        title: { en: "Technical Highlights", ja: "Technical Highlights" },
+        title: {
+          en: "Technical Highlights",
+          ja: "Technical Highlights",
+        },
         items: [
           {
             title: {
@@ -383,10 +477,22 @@ export const PROJECTS: Project[] = [
         ],
       },
     ],
+    stage: {
+      ja: "社内運用中",
+      en: "In internal use",
+    },
+    role: {
+      ja: "課題整理・提案・UI/UX・実装・インフラ・導入・運用改善",
+      en: "Problem framing, proposal, UI/UX, implementation, infrastructure, rollout & iteration",
+    },
   },
-
+  HOWTELEVISION_PROJECT,
+  SPEEE_PROJECT,
   {
-    title: { en: "AtCoderRevManager", ja: "AtCoderRevManager" },
+    title: {
+      en: "AtCoderRevManager",
+      ja: "AtCoderRevManager",
+    },
     status: "In Development",
     tags: [
       ".NET 10",
@@ -410,7 +516,6 @@ export const PROJECTS: Project[] = [
     links: {
       github: "https://github.com/Haru8644/AtCoderRevManager",
     },
-
     images: [
       {
         src: "/images/projects/atcoderrevmanager-1.png",
@@ -420,7 +525,6 @@ export const PROJECTS: Project[] = [
         },
       },
     ],
-
     highlights: [
       {
         label: "Architecture",
@@ -445,4 +549,5 @@ export const PROJECTS: Project[] = [
       },
     ],
   },
+  ENTRIA_PROJECT,
 ];

@@ -88,8 +88,8 @@ export const Timeline = () => {
           </h2>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600 md:text-base">
             {lang === "en"
-              ? "Education is kept compact, while work experience is presented in a balanced two-column layout so the section stays readable even with denser content."
-              : "学歴はコンパクトに、経歴は情報量が増えても見た目が崩れにくい2カラム構成で整理しています。"}
+              ? "My experience spans product management, internal software development and operation, marketing analysis, and team product planning."
+              : "PdMインターン、社内システムの企画・開発・運用、マーケティング分析、チームでのプロダクト企画を経験してきました。"}
           </p>
         </div>
 

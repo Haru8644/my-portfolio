@@ -1,0 +1,517 @@
+.impactSection {
+  padding: 62px 24px 80px;
+  scroll-margin-top: 108px;
+}
+.impactContainer {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.impactHeader {
+  padding: 0 18px;
+  margin-bottom: 16px;
+}
+.organizationLabel {
+  color: #849dc4;
+  font-size: 13px;
+  line-height: 1.7;
+  letter-spacing: 0.32em;
+  font-weight: 700;
+  text-transform: none;
+}
+.impactHeader h2 {
+  color: #0c142b;
+  font-size: 32px;
+  line-height: 1.5;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  margin-top: 12px;
+}
+.impactHeader > p:not(.organizationLabel) {
+  color: #687b9d;
+  font-size: 14px;
+  line-height: 1.85;
+  margin-top: 6px;
+}
+.impactHeader > .impactPeriod {
+  margin-top: 0 !important;
+}
+.impactGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.impactCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 246px;
+  padding: 20px;
+  border-radius: 22px;
+  border: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.91);
+  box-shadow: 0 12px 32px -22px rgba(60, 94, 132, 0.16);
+}
+.impactIcon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 13px;
+  border: 1px solid #182446;
+  background: #0d142c;
+  box-shadow:
+    inset 0 -3px 9px #172447,
+    0 3px 7px #0f172a16;
+}
+.impactCardLabel {
+  margin-top: 13px;
+  color: #849dc4;
+  font-size: 11px;
+  line-height: 1.7;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+.impactCard h3 {
+  margin-top: 6px;
+  color: #111a32;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: -0.035em;
+}
+.impactCardBody {
+  color: #6d7e9f;
+  font-size: 13px;
+  line-height: 1.85;
+  margin-top: 11px;
+  margin-bottom: 10px;
+}
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid #96d6ff;
+  background: linear-gradient(180deg, #fff, #edfaff);
+  border-radius: 999px;
+  color: #0789f7;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 600;
+  padding: 4px 15px;
+  margin-top: auto;
+}
+.impactAction {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+.impactButton,
+.cardButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #0086ff;
+  border: 1px solid #2697ff;
+  background: rgba(255, 255, 255, 0.94);
+  font-size: 12px;
+  line-height: 1.6;
+  font-weight: 600;
+  padding: 7px 19px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    box-shadow 0.15s;
+}
+.impactButton:hover,
+.cardButton:hover {
+  background: #eff9ff;
+  box-shadow: 0 4px 12px #339dff12;
+}
+.impactButton:focus-visible,
+.cardButton:focus-visible {
+  outline: 3px solid #318ce5;
+  outline-offset: 4px;
+}
+.impactDivider {
+  border-top: 1px solid #d4e8f8;
+  margin-top: 32px;
+  margin-bottom: 46px;
+}
+.projectsSection {
+  scroll-margin-top: 108px;
+}
+.workContainer {
+  max-width: 1120px;
+  margin-inline: auto;
+}
+.workHeading {
+  padding-inline: 8px;
+  margin-bottom: 34px;
+}
+.workHeading p {
+  color: #8497b7;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.7;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.workHeading h2 {
+  color: #0d152c;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  margin-top: 7px;
+  line-height: 1.4;
+}
+.workGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.featuredCard {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #e5edf3;
+  border-radius: 21px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 15px 36px -24px #3680ab35;
+}
+.featuredCard[data-case="merpay"] {
+  border-color: #c5eaff;
+}
+.cover {
+  position: relative;
+  aspect-ratio: 1.82;
+  overflow: hidden;
+  border-radius: 14px;
+  padding: 20px 22px;
+  background: linear-gradient(125deg, #e3f4ff 0%, #f1f9ff 78%, #e3f3ff);
+  isolation: isolate;
+}
+.cover[data-case="howtelevision"] {
+  background: linear-gradient(135deg, #e1fbf7, #effdfd 74%, #e6f9fb);
+}
+.cover[data-case="speee"] {
+  background: linear-gradient(135deg, #e0ebff, #edf5ff 70%, #e7edff);
+}
+.coverIllustration {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: -5px;
+  width: 65%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+.coverBadge {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  color: #007be8;
+  border: 1px solid #9bceff;
+  border-radius: 999px;
+  padding: 5px 13px;
+  background: #fffffff0;
+  box-shadow: 0 4px 8px #589bd612;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.coverCopy {
+  position: relative;
+  margin-top: 32px;
+  width: 70%;
+}
+.coverLabel {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #355d8a;
+  font-weight: 600;
+}
+.coverHeading {
+  white-space: pre-line;
+  margin-top: 13px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.045em;
+  color: #0e1c31;
+}
+.coverKeywords {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 18px;
+}
+.coverKeywords span,
+.roomKeywords span {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  border: 1px solid #c4dcf7;
+  border-radius: 999px;
+  background: #fffffff0;
+  box-shadow: 0 3px 6px #5289c610;
+  padding: 5px 11px;
+  color: #345783;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.roomCover {
+  position: relative;
+  aspect-ratio: 1.82;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #050b12;
+}
+.roomCover img {
+  object-fit: cover;
+  object-position: 65% 54%;
+  transform: scale(1.62);
+}
+.cardBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 7px 10px;
+}
+.cardBody h3 {
+  color: #11182e;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.045em;
+  font-weight: 700;
+}
+.cardSummary {
+  color: #5a6d8d;
+  font-size: 15px;
+  line-height: 1.75;
+  margin-top: 9px;
+  max-width: 340px;
+}
+.cardFooter {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+.cardButton {
+  border-radius: 12px;
+  padding: 9px 24px;
+  flex-shrink: 0;
+  margin-left: auto;
+  font-size: 13px;
+}
+.footerRule {
+  flex: 1;
+  border-top: 1px solid #dce7f2;
+  min-width: 30px;
+  align-self: center;
+}
+.roomKeywords {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.roomKeywords span {
+  font-size: 11px;
+  padding: 5px 10px;
+  box-shadow: none;
+}
+.roomKeywords .roomStage {
+  color: #0082e6;
+  border-color: #a4ddff;
+  background: #e9f9ff;
+}
+.featuredCard:is([data-case="howtelevision"], [data-case="speee"]) .cardBody {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 14px;
+  align-content: start;
+}
+.featuredCard:is([data-case="howtelevision"], [data-case="speee"]) .cardBody h3 {
+  grid-column: 1 / -1;
+}
+.featuredCard:is([data-case="howtelevision"], [data-case="speee"]) .cardSummary {
+  grid-column: 1;
+  max-width: none;
+}
+.featuredCard:is([data-case="howtelevision"], [data-case="speee"]) .cardFooter {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: end;
+  margin-top: 0;
+  padding-top: 0;
+}
+.featuredCard:is([data-case="howtelevision"], [data-case="speee"]) .footerRule {
+  display: none;
+}
+:global(html[lang="en"]) .coverHeading {
+  font-size: 26px;
+  line-height: 1.4;
+}
+:global(html[lang="en"]) .coverKeywords {
+  gap: 5px;
+}
+:global(html[lang="en"]) .coverKeywords span {
+  font-size: 9px;
+  padding-inline: 8px;
+}
+:global(html[lang="en"]) .cardBody h3 {
+  font-size: 21px;
+}
+@container (max-width: 450px) {
+  .featuredCard:is([data-case="howtelevision"], [data-case="speee"]) .cardBody {
+    display: flex;
+  }
+  .featuredCard:is([data-case="howtelevision"], [data-case="speee"]) .cardFooter {
+    margin-top: auto;
+    padding-top: 12px;
+  }
+  .cover {
+    padding: 14px;
+  }
+  .coverBadge {
+    font-size: 10px;
+    padding: 3px 10px;
+  }
+  .coverCopy {
+    margin-top: 13px;
+    width: 72%;
+  }
+  .coverLabel {
+    font-size: 10px;
+  }
+  .coverHeading {
+    font-size: clamp(18px, 6.2cqw, 27px);
+    margin-top: 8px;
+    line-height: 1.3;
+  }
+  .coverKeywords {
+    gap: 5px;
+    margin-top: 12px;
+  }
+  .coverKeywords span {
+    font-size: 9px;
+    padding: 4px 8px;
+  }
+  :global(html[lang="en"]) .coverHeading {
+    font-size: clamp(16px, 5.3cqw, 23px);
+  }
+  :global(html[lang="en"]) .coverKeywords span {
+    font-size: 8px;
+    padding-inline: 6px;
+  }
+}
+@container (max-width: 310px) {
+  .cover {
+    padding: 11px;
+    aspect-ratio: 1.6;
+  }
+  .coverCopy {
+    margin-top: 7px;
+  }
+  .coverKeywords {
+    gap: 4px;
+    margin-top: 8px;
+  }
+  .coverKeywords span {
+    font-size: 8px;
+    padding: 3px 7px;
+  }
+  :global(html[lang="en"]) .coverKeywords {
+    gap: 3px;
+  }
+  :global(html[lang="en"]) .coverKeywords span {
+    padding-inline: 2px;
+  }
+}
+@media (max-width: 1000px) {
+  .impactGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .impactHeader h2 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 700px) {
+  .workGrid {
+    grid-template-columns: 1fr;
+  }
+  .impactSection {
+    padding: 48px 16px 56px;
+  }
+  .impactHeader {
+    padding-inline: 4px;
+  }
+  .impactHeader h2 {
+    font-size: 26px;
+  }
+  .impactHeader > p:not(.organizationLabel) {
+    font-size: 13px;
+  }
+  .workHeading {
+    padding-inline: 3px;
+    margin-bottom: 26px;
+  }
+  .workHeading h2 {
+    font-size: 29px;
+  }
+}
+@media (max-width: 480px) {
+  .impactGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .impactCard {
+    min-height: 220px;
+  }
+  .impactHeader h2 {
+    font-size: 25px;
+  }
+  .impactAction {
+    justify-content: stretch;
+  }
+  .impactButton {
+    width: 100%;
+  }
+  .cardBody {
+    padding: 14px 3px 6px;
+  }
+  .cardBody h3 {
+    font-size: 21px;
+  }
+  .cardSummary {
+    font-size: 13px;
+  }
+  .cardButton {
+    padding: 9px 13px;
+    font-size: 11px;
+  }
+  .roomKeywords span {
+    font-size: 9px;
+    padding-inline: 7px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .impactButton,
+  .cardButton {
+    transition: none;
+  }
+}
